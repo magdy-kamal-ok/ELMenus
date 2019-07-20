@@ -12,4 +12,7 @@ class Constants {
     
     private static let baseUrl = "https://elmenus-assignment.getsandbox.com/"
     public static let  tagesApiUrl = Constants.baseUrl + "tags/"
+    public static let itemsApiUrl = Constants.baseUrl + "items/"
+    public static let IMAGE_PLACEHOLDER_NAME = "ic_image_iphone_placeholder"
+
 }

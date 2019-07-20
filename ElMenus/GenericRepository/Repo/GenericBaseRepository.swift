@@ -19,22 +19,24 @@ GenericDataSourceContract {
     private let objGenericRequestClass:GenericRequestClass = GenericRequestClass<REMOTE>()
     private let objGenericDao:GenericDao = GenericDao<LOCAL>()
     
-    private var objObservableDao = PublishSubject<LOCAL>()
-    private var objObservableRemote = PublishSubject<REMOTE>()
+    private var objSubjectDao = PublishSubject<LOCAL>()
+    private var objSubjectRemote = PublishSubject<REMOTE>()
 
-    public var errorModule = PublishSubject<ErrorModel>()
+    private var objSubjectError = PublishSubject<ErrorModel>()
     
     private var bag = DisposeBag()
     
     public var objObservableLocal:Observable<LOCAL>{
-        return objObservableDao.asObservable()
+        return objSubjectDao.asObservable()
     }
     
     public var objObservableRemoteData:Observable<REMOTE>{
-        return objObservableRemote.asObservable()
+        return objSubjectRemote.asObservable()
     }
 
-    
+    public var objObservableErrorModel:Observable<ErrorModel>{
+        return objSubjectError.asObservable()
+    }
     
     func getGenericData(url:String, data:Parameters?, headers:HTTPHeaders?, bool:Bool = true)
     {
@@ -42,7 +44,7 @@ GenericDataSourceContract {
             if let cashedData = self.fetch(predicate: self.getPredicate())
             {
                 
-                objObservableDao.onNext(cashedData)
+                objSubjectDao.onNext(cashedData)
 
                 self.callBackEndApi(url: url, params: data, headers: headers)
             }
@@ -63,11 +65,11 @@ GenericDataSourceContract {
             switch subObj
             {
                 case .next(let responseObj):
-                    self.objObservableRemote.onNext(responseObj)
+                    self.objSubjectRemote.onNext(responseObj)
                     self.insert(genericDataModel: responseObj as! LOCAL)
-                    self.objObservableDao.onNext(responseObj as! LOCAL)
+                    self.objSubjectDao.onNext(responseObj as! LOCAL)
                 case .error(let error):
-                    self.errorModule.onNext(ErrorModel(desc: error.localizedDescription, code: 404))
+                    self.objSubjectError.onNext(ErrorModel(desc: error.localizedDescription, code: 404))
                 
                 case .completed:
                     print("Completed")

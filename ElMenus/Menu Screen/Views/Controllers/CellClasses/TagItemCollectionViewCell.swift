@@ -9,10 +9,19 @@
 import UIKit
 
 class TagItemCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var tagNameLbl: UILabel!
+    @IBOutlet weak var tagImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func configureCell(tagModel: TagModel)
+    {
+        self.tagNameLbl.text = tagModel.tagName
+        GlobalUtilities.downloadImage(path: tagModel.photoURL, placeholder: nil, into: self.tagImageView, indicator: nil)
+    }
 }

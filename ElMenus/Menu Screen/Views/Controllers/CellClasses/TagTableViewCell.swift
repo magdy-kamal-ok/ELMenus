@@ -9,8 +9,10 @@
 import UIKit
 
 class TagTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var tagsCollectionView: UICollectionView!
+    private var tagsList = [TagModel]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,11 +20,16 @@ class TagTableViewCell: UITableViewCell {
         self.tagsCollectionView.dataSource = self
         self.tagsCollectionView.register(UINib.init(nibName: "TagItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagItemCollectionViewCell")
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
+    }
+    func configureCell(tagsList:[TagModel])
+    {
+        self.tagsList = tagsList
+        self.tagsCollectionView.reloadData()
     }
     
 }
@@ -30,20 +37,22 @@ class TagTableViewCell: UITableViewCell {
 extension TagTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return self.tagsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagItemCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagItemCollectionViewCell", for: indexPath) as! TagItemCollectionViewCell
+        
+        cell.configureCell(tagModel: self.tagsList[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: 50, height: self.tagsCollectionView.frame.height)
+        return CGSize.init(width: 150, height: self.tagsCollectionView.frame.height)
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-//        print(indexPath.row)
+        //        print(indexPath.row)
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset

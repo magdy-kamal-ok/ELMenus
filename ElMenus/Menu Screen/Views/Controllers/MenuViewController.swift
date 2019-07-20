@@ -8,14 +8,19 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
 
 class MenuViewController: BaseMenuViewController {
     
-    let tagRepo = TagsRepository.init()
+    let disposeBag = DisposeBag()
+    let tagsViewModel = TagsViewModel()
+    private var tagsList = [TagModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        tagRepo.getTagsList(offset: 1)
+        listenToTagsList()
+        tagsViewModel.getTagsList()
+
     }
     
     override func setupCellNibNames()
@@ -23,8 +28,22 @@ class MenuViewController: BaseMenuViewController {
         self.menuTableView.registerCellNib(cellClass: TagTableViewCell.self)
     }
     
+    func listenToTagsList()
+    {
+        tagsViewModel.observableTagList.subscribe(onNext: { (tagsList) in
+            self.tagsList = tagsList
+            self.menuTableView.reloadData()
+            
+        }, onError: { (error) in
+            print(error)
+        }, onCompleted: {
+            print("Completed")
+        }).disposed(by: disposeBag)
+        
+    }
+    
     override func getCellsCount(with section: Int) -> Int {
-        return 2
+        return 1
     }
     override func getSectionsCount() -> Int {
         return 1
@@ -35,6 +54,7 @@ class MenuViewController: BaseMenuViewController {
     
     override func getCustomCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as TagTableViewCell
+        cell.configureCell(tagsList: self.tagsList)
         return cell
     }
 }
