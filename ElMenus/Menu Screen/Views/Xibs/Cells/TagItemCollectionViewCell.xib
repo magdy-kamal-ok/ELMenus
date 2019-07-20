@@ -30,22 +30,33 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu6-36-h31">
-                                <rect key="frame" x="8" y="134" width="135" height="0.0"/>
-                                <color key="backgroundColor" red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfk-bF-Ypn">
+                                <rect key="frame" x="0.0" y="142" width="151" height="0.0"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu6-36-h31">
+                                        <rect key="frame" x="8" y="0.0" width="135" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="zu6-36-h31" firstAttribute="top" secondItem="cfk-bF-Ypn" secondAttribute="top" id="HTh-Eq-kcu"/>
+                                    <constraint firstAttribute="trailing" secondItem="zu6-36-h31" secondAttribute="trailing" constant="8" id="Rc0-MF-4Iw"/>
+                                    <constraint firstItem="zu6-36-h31" firstAttribute="leading" secondItem="cfk-bF-Ypn" secondAttribute="leading" constant="8" id="cuj-lZ-S8Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="zu6-36-h31" secondAttribute="bottom" id="lOn-p2-v4P"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zu6-36-h31" firstAttribute="leading" secondItem="oZt-HI-h6Y" secondAttribute="leading" constant="8" id="5lX-Qd-QcL"/>
+                            <constraint firstItem="cfk-bF-Ypn" firstAttribute="leading" secondItem="oZt-HI-h6Y" secondAttribute="leading" id="Ea4-Jx-vsn"/>
                             <constraint firstAttribute="bottom" secondItem="cPD-hY-hNv" secondAttribute="bottom" id="GC0-22-TZ8"/>
                             <constraint firstAttribute="trailing" secondItem="cPD-hY-hNv" secondAttribute="trailing" id="YTD-FD-Tu7"/>
                             <constraint firstItem="cPD-hY-hNv" firstAttribute="top" secondItem="oZt-HI-h6Y" secondAttribute="top" id="ZY6-T2-hVh"/>
-                            <constraint firstAttribute="bottom" secondItem="zu6-36-h31" secondAttribute="bottom" constant="8" id="qz0-gq-Lg9"/>
-                            <constraint firstAttribute="trailing" secondItem="zu6-36-h31" secondAttribute="trailing" constant="8" id="rQ3-aF-pWd"/>
+                            <constraint firstAttribute="bottom" secondItem="cfk-bF-Ypn" secondAttribute="bottom" id="fx4-DX-SNZ"/>
+                            <constraint firstAttribute="trailing" secondItem="cfk-bF-Ypn" secondAttribute="trailing" id="uEd-QV-P1D"/>
                             <constraint firstItem="cPD-hY-hNv" firstAttribute="leading" secondItem="oZt-HI-h6Y" secondAttribute="leading" id="xdz-rO-XUh"/>
                         </constraints>
                     </view>
@@ -60,10 +71,11 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="151" height="158"/>
             <connections>
+                <outlet property="containerTitleView" destination="cfk-bF-Ypn" id="c6u-4e-5oh"/>
                 <outlet property="tagImageView" destination="cPD-hY-hNv" id="aII-WW-Snp"/>
                 <outlet property="tagNameLbl" destination="zu6-36-h31" id="LH8-Oq-JiE"/>
             </connections>
-            <point key="canvasLocation" x="36" y="116"/>
+            <point key="canvasLocation" x="36" y="115.14242878560721"/>
         </collectionViewCell>
     </objects>
 </document>

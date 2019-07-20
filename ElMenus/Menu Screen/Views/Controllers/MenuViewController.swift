@@ -49,7 +49,7 @@ class MenuViewController: BaseMenuViewController {
         return 1
     }
     override func getCellHeight() -> CGFloat {
-        return 200
+        return 250
     }
     
     override func getCustomCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

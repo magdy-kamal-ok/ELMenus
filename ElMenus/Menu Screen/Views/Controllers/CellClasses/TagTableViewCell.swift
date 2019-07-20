@@ -44,6 +44,10 @@ extension TagTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagItemCollectionViewCell", for: indexPath) as! TagItemCollectionViewCell
         
         cell.configureCell(tagModel: self.tagsList[indexPath.row])
+        if indexPath.row == 5
+        {
+            cell.tagNameLbl.text = "hello this my new tag"
+        }
         return cell
     }
     

@@ -12,6 +12,7 @@ class TagItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var tagNameLbl: UILabel!
     @IBOutlet weak var tagImageView: UIImageView!
+    @IBOutlet weak var containerTitleView: UIView!
     
     
     override func awakeFromNib() {
@@ -23,5 +24,11 @@ class TagItemCollectionViewCell: UICollectionViewCell {
     {
         self.tagNameLbl.text = tagModel.tagName
         GlobalUtilities.downloadImage(path: tagModel.photoURL, placeholder: nil, into: self.tagImageView, indicator: nil)
+        
+        DispatchQueue.main.async {
+            self.containerTitleView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
+        }
+        
     }
+    
 }

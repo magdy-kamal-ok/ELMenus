@@ -31,6 +31,7 @@
 		04250A7722E3815400AE1989 /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7622E3815400AE1989 /* TagsViewModel.swift */; };
 		04250A7922E385EA00AE1989 /* TagItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7822E385EA00AE1989 /* TagItemCollectionViewCell.swift */; };
 		04250A7B22E3983500AE1989 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7A22E3983500AE1989 /* TagTableViewCell.swift */; };
+		04250A7D22E3AA0500AE1989 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7C22E3AA0500AE1989 /* UIViewExtension.swift */; };
 		042A8A3722E0EEFE005B4658 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */; };
 		042A8A3822E0EEFE005B4658 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */; };
 		042A8A3A22E0EEFE005B4658 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A2C22E0EEFD005B4658 /* UIColorExtension.swift */; };
@@ -96,6 +97,7 @@
 		04250A7622E3815400AE1989 /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
 		04250A7822E385EA00AE1989 /* TagItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		04250A7A22E3983500AE1989 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
+		04250A7C22E3AA0500AE1989 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		042A8A2C22E0EEFD005B4658 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		042A8A2D22E0EEFD005B4658 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				042A8A2D22E0EEFD005B4658 /* UITableViewExtension.swift */,
 				042A8A2E22E0EEFD005B4658 /* SwiftTypeExtensions.swift */,
 				042A8A2F22E0EEFD005B4658 /* CollectionExtensions.swift */,
+				04250A7C22E3AA0500AE1989 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				04250A6B22E35EEE00AE1989 /* CollectionExtensions.swift in Sources */,
 				04250A6C22E35EEE00AE1989 /* ErrorModel.swift in Sources */,
 				04250A6D22E35EEE00AE1989 /* UIHelper.swift in Sources */,
+				04250A7D22E3AA0500AE1989 /* UIViewExtension.swift in Sources */,
 				04250A7922E385EA00AE1989 /* TagItemCollectionViewCell.swift in Sources */,
 				04250A6E22E35EEE00AE1989 /* GlobalUtilities.swift in Sources */,
 				04250A6F22E35EEE00AE1989 /* AppDelegate.swift in Sources */,
