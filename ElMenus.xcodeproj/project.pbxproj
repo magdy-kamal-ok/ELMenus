@@ -32,6 +32,8 @@
 		04250A7922E385EA00AE1989 /* TagItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7822E385EA00AE1989 /* TagItemCollectionViewCell.swift */; };
 		04250A7B22E3983500AE1989 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7A22E3983500AE1989 /* TagTableViewCell.swift */; };
 		04250A7D22E3AA0500AE1989 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7C22E3AA0500AE1989 /* UIViewExtension.swift */; };
+		04250A8022E3B1AA00AE1989 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7E22E3B1AA00AE1989 /* ItemTableViewCell.swift */; };
+		04250A8122E3B1AA00AE1989 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04250A7F22E3B1AA00AE1989 /* ItemTableViewCell.xib */; };
 		042A8A3722E0EEFE005B4658 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */; };
 		042A8A3822E0EEFE005B4658 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */; };
 		042A8A3A22E0EEFE005B4658 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A2C22E0EEFD005B4658 /* UIColorExtension.swift */; };
@@ -98,6 +100,8 @@
 		04250A7822E385EA00AE1989 /* TagItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		04250A7A22E3983500AE1989 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
 		04250A7C22E3AA0500AE1989 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		04250A7E22E3B1AA00AE1989 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		04250A7F22E3B1AA00AE1989 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		042A8A2C22E0EEFD005B4658 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		042A8A2D22E0EEFD005B4658 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -343,6 +347,7 @@
 		0444EE4422E240A000EA1E55 /* CellClasses */ = {
 			isa = PBXGroup;
 			children = (
+				04250A7E22E3B1AA00AE1989 /* ItemTableViewCell.swift */,
 				04250A7822E385EA00AE1989 /* TagItemCollectionViewCell.swift */,
 				04250A7A22E3983500AE1989 /* TagTableViewCell.swift */,
 			);
@@ -354,6 +359,7 @@
 			children = (
 				0444EE4F22E2456100EA1E55 /* TagTableViewCell.xib */,
 				0444EE5722E2478A00EA1E55 /* TagItemCollectionViewCell.xib */,
+				04250A7F22E3B1AA00AE1989 /* ItemTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				0444EE5B22E2478A00EA1E55 /* TagItemCollectionViewCell.xib in Resources */,
 				045CF9DA22E0A4750093F25E /* LaunchScreen.storyboard in Resources */,
 				0444EE4B22E240D800EA1E55 /* MenuViewController.xib in Resources */,
+				04250A8122E3B1AA00AE1989 /* ItemTableViewCell.xib in Resources */,
 				045CF9D722E0A4750093F25E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +707,7 @@
 				04250A5922E35EEE00AE1989 /* BaseMenuViewController.swift in Sources */,
 				04250A5F22E35EEE00AE1989 /* TagModel.swift in Sources */,
 				04250A6022E35EEE00AE1989 /* ItemModel.swift in Sources */,
+				04250A8022E3B1AA00AE1989 /* ItemTableViewCell.swift in Sources */,
 				04250A6122E35EEE00AE1989 /* TagsResponseModel.swift in Sources */,
 				04250A6222E35EEE00AE1989 /* ItemsResponseModel.swift in Sources */,
 				04250A7B22E3983500AE1989 /* TagTableViewCell.swift in Sources */,

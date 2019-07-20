@@ -15,7 +15,6 @@ class TagTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.tagsCollectionView.delegate = self
         self.tagsCollectionView.dataSource = self
         self.tagsCollectionView.register(UINib.init(nibName: "TagItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagItemCollectionViewCell")
@@ -26,6 +25,7 @@ class TagTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    
     func configureCell(tagsList:[TagModel])
     {
         self.tagsList = tagsList
@@ -36,33 +36,29 @@ class TagTableViewCell: UITableViewCell {
 
 extension TagTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.tagsList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagItemCollectionViewCell", for: indexPath) as! TagItemCollectionViewCell
-        
         cell.configureCell(tagModel: self.tagsList[indexPath.row])
-        if indexPath.row == 5
-        {
-            cell.tagNameLbl.text = "hello this my new tag"
-        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: 150, height: self.tagsCollectionView.frame.height)
     }
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        //        print(indexPath.row)
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset
         let inset = scrollView.contentInset
         let y: CGFloat = offset.x - inset.left
-        //print(y)
         let reload_distance: CGFloat = -15
         if y < reload_distance{
             scrollView.bounces = false
@@ -70,7 +66,6 @@ extension TagTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource,
                 self.tagsCollectionView.bounces = true
             }
             print("refresh")
-            
         }
     }
 }

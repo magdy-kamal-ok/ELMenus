@@ -9,20 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ElMenus/Menu Screen/Views/Controllers/CellClasses/TagTableViewCell.swift"
-            timestampString = "585345856.555553"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ElMenus/GenericRepository/Remote/GenericRequestClass.swift"
             timestampString = "585327688.224602"
             startingColumnNumber = "9223372036854775807"
