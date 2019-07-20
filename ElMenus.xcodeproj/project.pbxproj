@@ -43,9 +43,12 @@
 		042A8A6422E0F29B005B4658 /* GenericRequestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A5A22E0F29B005B4658 /* GenericRequestClass.swift */; };
 		042A8A6522E0F29B005B4658 /* GenericRequestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A5A22E0F29B005B4658 /* GenericRequestClass.swift */; };
 		042A8A6622E0F29B005B4658 /* GenericRequestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A5A22E0F29B005B4658 /* GenericRequestClass.swift */; };
-		042A8A6822E0F9EB005B4658 /* extendedRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A6722E0F9EB005B4658 /* extendedRepo.swift */; };
-		042A8A6922E0F9EB005B4658 /* extendedRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A6722E0F9EB005B4658 /* extendedRepo.swift */; };
-		042A8A6A22E0F9EB005B4658 /* extendedRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A6722E0F9EB005B4658 /* extendedRepo.swift */; };
+		0432955322E2A62800C4C075 /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432955222E2A62800C4C075 /* BaseMenuViewController.swift */; };
+		0432955822E2ADEF00C4C075 /* TagsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432955722E2ADEF00C4C075 /* TagsResponseModel.swift */; };
+		0432955B22E2AE0800C4C075 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432955A22E2AE0800C4C075 /* TagModel.swift */; };
+		0432955E22E2AF5400C4C075 /* ItemsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432955D22E2AF5400C4C075 /* ItemsResponseModel.swift */; };
+		0432956022E2AF6C00C4C075 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432955F22E2AF6C00C4C075 /* ItemModel.swift */; };
+		0432956322E2C1B600C4C075 /* TagsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432956222E2C1B600C4C075 /* TagsRepository.swift */; };
 		0444EE4822E240D800EA1E55 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444EE4622E240D800EA1E55 /* MenuViewController.swift */; };
 		0444EE4922E240D800EA1E55 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444EE4622E240D800EA1E55 /* MenuViewController.swift */; };
 		0444EE4A22E240D800EA1E55 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444EE4622E240D800EA1E55 /* MenuViewController.swift */; };
@@ -104,7 +107,12 @@
 		042A8A5722E0F29B005B4658 /* GenericBaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBaseRepository.swift; sourceTree = "<group>"; };
 		042A8A5822E0F29B005B4658 /* GenericDataSourceContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDataSourceContract.swift; sourceTree = "<group>"; };
 		042A8A5A22E0F29B005B4658 /* GenericRequestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericRequestClass.swift; sourceTree = "<group>"; };
-		042A8A6722E0F9EB005B4658 /* extendedRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extendedRepo.swift; sourceTree = "<group>"; };
+		0432955222E2A62800C4C075 /* BaseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
+		0432955722E2ADEF00C4C075 /* TagsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsResponseModel.swift; sourceTree = "<group>"; };
+		0432955A22E2AE0800C4C075 /* TagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
+		0432955D22E2AF5400C4C075 /* ItemsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsResponseModel.swift; sourceTree = "<group>"; };
+		0432955F22E2AF6C00C4C075 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		0432956222E2C1B600C4C075 /* TagsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRepository.swift; sourceTree = "<group>"; };
 		0444EE4622E240D800EA1E55 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0444EE4722E240D800EA1E55 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		0444EE4E22E2456100EA1E55 /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
@@ -203,7 +211,6 @@
 				042A8A5422E0F29A005B4658 /* Local */,
 				042A8A5622E0F29B005B4658 /* Repo */,
 				042A8A5922E0F29B005B4658 /* Remote */,
-				042A8A6722E0F9EB005B4658 /* extendedRepo.swift */,
 			);
 			path = GenericRepository;
 			sourceTree = "<group>";
@@ -233,6 +240,57 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
+		0432955122E2A61100C4C075 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0432955222E2A62800C4C075 /* BaseMenuViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0432955422E2AD7C00C4C075 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		0432955522E2AD9900C4C075 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0432955922E2ADF700C4C075 /* BasicModels */,
+				0432955622E2ADAB00C4C075 /* RespondeModels */,
+				0432955422E2AD7C00C4C075 /* Source */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0432955622E2ADAB00C4C075 /* RespondeModels */ = {
+			isa = PBXGroup;
+			children = (
+				0432955722E2ADEF00C4C075 /* TagsResponseModel.swift */,
+				0432955D22E2AF5400C4C075 /* ItemsResponseModel.swift */,
+			);
+			path = RespondeModels;
+			sourceTree = "<group>";
+		};
+		0432955922E2ADF700C4C075 /* BasicModels */ = {
+			isa = PBXGroup;
+			children = (
+				0432955A22E2AE0800C4C075 /* TagModel.swift */,
+				0432955F22E2AF6C00C4C075 /* ItemModel.swift */,
+			);
+			path = BasicModels;
+			sourceTree = "<group>";
+		};
+		0432956122E2C19D00C4C075 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0432956222E2C1B600C4C075 /* TagsRepository.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		0444EE3E22E2404200EA1E55 /* Menu Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +311,8 @@
 		0444EE4022E2407000EA1E55 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0432956122E2C19D00C4C075 /* Source */,
+				0432955522E2AD9900C4C075 /* Data */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +338,7 @@
 		0444EE4322E2408900EA1E55 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0432955122E2A61100C4C075 /* Base */,
 				0444EE4622E240D800EA1E55 /* MenuViewController.swift */,
 				0444EE4422E240A000EA1E55 /* CellClasses */,
 			);
@@ -640,18 +701,23 @@
 			files = (
 				0444EE5022E2456100EA1E55 /* TagTableViewCell.swift in Sources */,
 				042A8A3622E0EEFE005B4658 /* ErrorModel.swift in Sources */,
+				0432955B22E2AE0800C4C075 /* TagModel.swift in Sources */,
 				0444EE4822E240D800EA1E55 /* MenuViewController.swift in Sources */,
+				0432956022E2AF6C00C4C075 /* ItemModel.swift in Sources */,
 				042A8A5E22E0F29B005B4658 /* GenericBaseRepository.swift in Sources */,
 				0444EE5822E2478A00EA1E55 /* TagItemCollectionViewCell.swift in Sources */,
+				0432956322E2C1B600C4C075 /* TagsRepository.swift in Sources */,
 				042A8A4222E0EEFE005B4658 /* CollectionExtensions.swift in Sources */,
 				042A8A3F22E0EEFE005B4658 /* SwiftTypeExtensions.swift in Sources */,
 				045CF9D022E0A4730093F25E /* AppDelegate.swift in Sources */,
+				0432955E22E2AF5400C4C075 /* ItemsResponseModel.swift in Sources */,
 				042A8A6422E0F29B005B4658 /* GenericRequestClass.swift in Sources */,
 				042A8A4522E0EEFE005B4658 /* Constants.swift in Sources */,
+				0432955322E2A62800C4C075 /* BaseMenuViewController.swift in Sources */,
 				042A8A3922E0EEFE005B4658 /* UIColorExtension.swift in Sources */,
-				042A8A6822E0F9EB005B4658 /* extendedRepo.swift in Sources */,
 				042A8A4B22E0EEFE005B4658 /* GlobalUtilities.swift in Sources */,
 				042A8A3C22E0EEFE005B4658 /* UITableViewExtension.swift in Sources */,
+				0432955822E2ADEF00C4C075 /* TagsResponseModel.swift in Sources */,
 				042A8A5B22E0F29B005B4658 /* GenericDao.swift in Sources */,
 				042A8A6122E0F29B005B4658 /* GenericDataSourceContract.swift in Sources */,
 				042A8A4822E0EEFE005B4658 /* UIHelper.swift in Sources */,
@@ -673,7 +739,6 @@
 				042A8A6522E0F29B005B4658 /* GenericRequestClass.swift in Sources */,
 				042A8A4622E0EEFE005B4658 /* Constants.swift in Sources */,
 				042A8A3A22E0EEFE005B4658 /* UIColorExtension.swift in Sources */,
-				042A8A6922E0F9EB005B4658 /* extendedRepo.swift in Sources */,
 				042A8A4C22E0EEFE005B4658 /* GlobalUtilities.swift in Sources */,
 				042A8A3D22E0EEFE005B4658 /* UITableViewExtension.swift in Sources */,
 				042A8A5C22E0F29B005B4658 /* GenericDao.swift in Sources */,
@@ -697,7 +762,6 @@
 				042A8A6622E0F29B005B4658 /* GenericRequestClass.swift in Sources */,
 				042A8A4722E0EEFE005B4658 /* Constants.swift in Sources */,
 				042A8A3B22E0EEFE005B4658 /* UIColorExtension.swift in Sources */,
-				042A8A6A22E0F9EB005B4658 /* extendedRepo.swift in Sources */,
 				042A8A4D22E0EEFE005B4658 /* GlobalUtilities.swift in Sources */,
 				042A8A3E22E0EEFE005B4658 /* UITableViewExtension.swift in Sources */,
 				042A8A5D22E0F29B005B4658 /* GenericDao.swift in Sources */,

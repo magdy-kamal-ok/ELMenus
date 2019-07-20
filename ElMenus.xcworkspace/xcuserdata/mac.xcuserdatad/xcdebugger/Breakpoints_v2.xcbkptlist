@@ -9,14 +9,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ElMenus/GenericRepository/extendedRepo.swift"
-            timestampString = "585173328.160269"
+            filePath = "ElMenus/Menu Screen/Views/Controllers/CellClasses/TagTableViewCell.swift"
+            timestampString = "585255692.907782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "getPredicate()"
-            landmarkType = "7">
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ElMenus/Menu Screen/Views/Controllers/CellClasses/TagTableViewCell.swift"
-            timestampString = "585255692.9071831"
+            filePath = "ElMenus/GenericRepository/Remote/GenericRequestClass.swift"
+            timestampString = "585287640.174443"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "scrollViewDidScroll(_:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "callApi(url:params:headers:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ElMenus/Menu Screen/Views/Controllers/CellClasses/TagTableViewCell.swift"
-            timestampString = "585255692.907782"
+            filePath = "ElMenus/Menu Screen/Models/Source/TagsRepository.swift"
+            timestampString = "585287653.38785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "scrollViewDidScroll(_:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "insertDataToLocal(genericDataModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ElMenus/GenericRepository/Repo/GenericBaseRepository.swift"
+            timestampString = "585287658.655592"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "insertDataToLocal(genericDataModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

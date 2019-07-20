@@ -7,29 +7,34 @@
 //
 
 import UIKit
+import RealmSwift
 
-class MenuViewController: UIViewController {
-    @IBOutlet weak var menuTableView: UITableView!
+class MenuViewController: BaseMenuViewController {
     
+    let tagRepo = TagsRepository.init()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.menuTableView.delegate = self
-        self.menuTableView.dataSource = self
-        self.menuTableView.registerCellNib(cellClass: TagTableViewCell.self)
-    }
-}
-extension MenuViewController:UITableViewDelegate, UITableViewDataSource
-{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        tagRepo.getTagsList(offset: 1)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue() as TagTableViewCell
-        return cell
+    override func setupCellNibNames()
+    {
+        self.menuTableView.registerCellNib(cellClass: TagTableViewCell.self)
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+    override func getCellsCount(with section: Int) -> Int {
+        return 2
+    }
+    override func getSectionsCount() -> Int {
+        return 1
+    }
+    override func getCellHeight() -> CGFloat {
         return 200
     }
     
+    override func getCustomCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue() as TagTableViewCell
+        return cell
+    }
 }

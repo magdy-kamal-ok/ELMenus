@@ -65,17 +65,10 @@ GenericDataSourceContract {
                 case .next(let responseObj):
                     self.objObservableRemote.onNext(responseObj)
                     self.insert(genericDataModel: responseObj as! LOCAL)
-                    //self.objObservableDao.onNext(responseObj as! LOCAL)
-                case .error(_):
-                    if let resultData = self.fetch(predicate: self.getPredicate())
-                    {
-                        //  _ =  self.repo1.fetch()
-                        self.objObservableDao.onNext(resultData)
-                    }
-                    else{
-
-                        self.errorModule.onNext(ErrorModel(desc: "network first time fail", code: 404))
-                    }
+                    self.objObservableDao.onNext(responseObj as! LOCAL)
+                case .error(let error):
+                    self.errorModule.onNext(ErrorModel(desc: error.localizedDescription, code: 404))
+                
                 case .completed:
                     print("Completed")
             }
