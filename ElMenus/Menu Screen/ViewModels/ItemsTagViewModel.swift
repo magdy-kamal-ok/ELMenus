@@ -29,7 +29,10 @@ class ItemsTagViewModel: BaseNetworkConnectionViewModel {
     private func initializeSubscribers()
     {
         itemsRepo.objObservableLocal.subscribe(onNext: { (itemsResponseModel) in
-            print(itemsResponseModel)
+            if !self.isNetworkConnected()
+            {
+                self.handleLoadedTagItemsResponse(itemsTagModel: itemsResponseModel)
+            }
         }, onError: { (error) in
             print(error)
         }, onCompleted: {
@@ -46,6 +49,7 @@ class ItemsTagViewModel: BaseNetworkConnectionViewModel {
         
         itemsRepo.objObservableErrorModel.subscribe(onNext: { (errorModel) in
             self.hideProgressLoaderIndicator()
+            UIHelper.showInfoMessage(errorModel.desc, title: "ElMenus")
         }, onError: { (error) in
             print(error)
         }, onCompleted: {

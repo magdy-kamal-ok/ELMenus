@@ -31,10 +31,10 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfk-bF-Ypn">
-                                <rect key="frame" x="0.0" y="142" width="151" height="0.0"/>
+                                <rect key="frame" x="0.0" y="134" width="151" height="8"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu6-36-h31">
-                                        <rect key="frame" x="8" y="0.0" width="135" height="0.0"/>
+                                        <rect key="frame" x="8" y="4" width="135" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -42,10 +42,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="zu6-36-h31" firstAttribute="top" secondItem="cfk-bF-Ypn" secondAttribute="top" id="HTh-Eq-kcu"/>
+                                    <constraint firstItem="zu6-36-h31" firstAttribute="top" secondItem="cfk-bF-Ypn" secondAttribute="top" constant="4" id="HTh-Eq-kcu"/>
                                     <constraint firstAttribute="trailing" secondItem="zu6-36-h31" secondAttribute="trailing" constant="8" id="Rc0-MF-4Iw"/>
                                     <constraint firstItem="zu6-36-h31" firstAttribute="leading" secondItem="cfk-bF-Ypn" secondAttribute="leading" constant="8" id="cuj-lZ-S8Y"/>
-                                    <constraint firstAttribute="bottom" secondItem="zu6-36-h31" secondAttribute="bottom" id="lOn-p2-v4P"/>
+                                    <constraint firstAttribute="bottom" secondItem="zu6-36-h31" secondAttribute="bottom" constant="4" id="lOn-p2-v4P"/>
                                 </constraints>
                             </view>
                         </subviews>

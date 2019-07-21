@@ -31,7 +31,10 @@ class TagsViewModel: BaseNetworkConnectionViewModel {
     private func initializeSubscribers()
     {
         tagsRepo.objObservableLocal.subscribe(onNext: { (tagsResponseModel) in
-            print(tagsResponseModel)
+            if !self.isNetworkConnected()
+            {
+                self.handleLoadedTags(tagsList: tagsResponseModel.tags.toArray())
+            }
         }, onError: { (error) in
             print(error)
         }, onCompleted: {
@@ -48,6 +51,7 @@ class TagsViewModel: BaseNetworkConnectionViewModel {
         
         tagsRepo.objObservableErrorModel.subscribe(onNext: { (errorModel) in
             self.hideProgressLoaderIndicator()
+            UIHelper.showInfoMessage(errorModel.desc, title: "ElMenus")
         }, onError: { (error) in
             print(error)
         }, onCompleted: {

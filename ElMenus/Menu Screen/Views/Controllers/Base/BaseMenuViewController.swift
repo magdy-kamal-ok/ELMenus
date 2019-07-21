@@ -23,24 +23,11 @@ class BaseMenuViewController: UIViewController {
         
         setupTableDataSource()
         setupCellNibNames()
-        setNavTitle()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
-    
-    
-    func setNavTitle()
-    {
-        let logo = UIImage(named: "ic-marvel")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
-    }
-
-    
     
     // MARK: - Table view
     
@@ -76,7 +63,7 @@ class BaseMenuViewController: UIViewController {
     func setupSwipeRefresh() -> Void {
         refreshControl = UIRefreshControl()
         
-        refreshControl?.tintColor = UIColor.gray
+        refreshControl?.tintColor = UIColor(named:"BasicColor")
         refreshControl?.addTarget(self, action: #selector(swipeRefreshTableView), for: .valueChanged)
         self.menuTableView.addSubview(refreshControl!)
     }

@@ -31,10 +31,10 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaQ-Hk-FSz" userLabel="containerView">
-                                <rect key="frame" x="0.0" y="142.5" width="304" height="0.0"/>
+                                <rect key="frame" x="0.0" y="134.5" width="304" height="8"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYw-xZ-ROF">
-                                        <rect key="frame" x="8" y="0.0" width="288" height="0.0"/>
+                                        <rect key="frame" x="8" y="4" width="288" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -43,9 +43,9 @@
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="yYw-xZ-ROF" secondAttribute="trailing" constant="8" id="YoT-To-3iN"/>
-                                    <constraint firstAttribute="bottom" secondItem="yYw-xZ-ROF" secondAttribute="bottom" id="gT2-oV-ABP"/>
+                                    <constraint firstAttribute="bottom" secondItem="yYw-xZ-ROF" secondAttribute="bottom" constant="4" id="gT2-oV-ABP"/>
                                     <constraint firstItem="yYw-xZ-ROF" firstAttribute="leading" secondItem="OaQ-Hk-FSz" secondAttribute="leading" constant="8" id="lPb-SI-heB"/>
-                                    <constraint firstItem="yYw-xZ-ROF" firstAttribute="top" secondItem="OaQ-Hk-FSz" secondAttribute="top" id="mN9-i6-HLm"/>
+                                    <constraint firstItem="yYw-xZ-ROF" firstAttribute="top" secondItem="OaQ-Hk-FSz" secondAttribute="top" constant="4" id="mN9-i6-HLm"/>
                                 </constraints>
                             </view>
                         </subviews>

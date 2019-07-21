@@ -64,6 +64,7 @@ class MenuViewController: BaseMenuViewController {
         }).disposed(by: disposeBag)
         
     }
+    
     func listenToTagItems()
     {
         tagsViewModel.observableTagList.subscribe(onNext: { (tagsList) in
@@ -111,9 +112,11 @@ class MenuViewController: BaseMenuViewController {
             return self.itemsTagModel!.items.toArray().count
         }
     }
+    
     override func getSectionsCount() -> Int {
         return self.menuSections.count
     }
+    
     override func getCellHeight(indexPath:IndexPath) -> CGFloat {
         let sectionType = self.menuSections[indexPath.section]
         switch sectionType {
