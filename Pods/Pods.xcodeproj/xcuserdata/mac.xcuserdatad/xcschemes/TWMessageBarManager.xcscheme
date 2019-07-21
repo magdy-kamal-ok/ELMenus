@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "901F393F1622CBA37A7B3D894E75C84C"
-               BlueprintName = "SVProgressHUD"
+               BlueprintIdentifier = "333C942C1DC13839E081BB1B79E8724B"
+               BlueprintName = "TWMessageBarManager"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SVProgressHUD.framework">
+               BuildableName = "TWMessageBarManager.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

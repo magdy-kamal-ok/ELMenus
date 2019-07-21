@@ -24,9 +24,7 @@ target 'ElMenus' do
      
      pod 'SVProgressHUD'
      pod 'ObjectMapper+Realm'
-     
-     pod 'NotificationBannerSwift'
- 
+     pod 'TWMessageBarManager'
 
   target 'ElMenusTests' do
     inherit! :search_paths

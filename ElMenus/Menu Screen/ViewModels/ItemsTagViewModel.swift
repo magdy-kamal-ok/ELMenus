@@ -72,7 +72,7 @@ class ItemsTagViewModel: BaseNetworkConnectionViewModel {
 
     
     override func handleInternetConnectionReconnected() {
-        
+        self.subjectTagItem.onNext(nil)
     }
     override func handleInternetConnectionDisconnected() {
         

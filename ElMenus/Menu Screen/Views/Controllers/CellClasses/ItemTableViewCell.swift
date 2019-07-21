@@ -31,6 +31,7 @@ class ItemTableViewCell: UITableViewCell {
         GlobalUtilities.downloadImage(path: itemModel.photoUrl, placeholder: nil, into: self.itemImageView, indicator: nil)
         
         DispatchQueue.main.async {
+            self.itemImageView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
             self.containerTitleView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
         }
         
