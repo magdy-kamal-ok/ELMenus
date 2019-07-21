@@ -70,9 +70,12 @@ class ItemsTagViewModel: BaseNetworkConnectionViewModel {
     }
     
 
-    
-    override func handleInternetConnectionReconnected() {
+    func refreshTagItemsList()
+    {
         self.subjectTagItem.onNext(nil)
+    }
+    override func handleInternetConnectionReconnected() {
+        self.refreshTagItemsList()
     }
     override func handleInternetConnectionDisconnected() {
         

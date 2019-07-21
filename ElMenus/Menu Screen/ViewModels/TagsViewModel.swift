@@ -89,11 +89,15 @@ class TagsViewModel: BaseNetworkConnectionViewModel {
         self.tagIndex = 1
         
     }
+    func refreshTagsList()
+    {
+        self.resetDataSource()
+        self.getTagsList()
+    }
     
     override func handleInternetConnectionReconnected() {
         UIHelper.showInfoMessage("Please be Informed Your internet Connection Reconnected", title: "ElMenus")
-        self.resetDataSource()
-        self.getTagsList()
+       self.refreshTagsList()
     }
     override func handleInternetConnectionDisconnected() {
         UIHelper.showInfoMessage("Please be Informed Your internet Connection Disconnected", title: "ElMenus")

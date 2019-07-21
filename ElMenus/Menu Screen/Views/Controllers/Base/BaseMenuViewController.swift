@@ -14,6 +14,7 @@ class BaseMenuViewController: UIViewController {
     
     @IBOutlet weak var menuTableView: UITableView!
 
+    private var refreshControl: UIRefreshControl?
     
     // MARK: - Base Life Cycle
     
@@ -70,6 +71,31 @@ class BaseMenuViewController: UIViewController {
         preconditionFailure("You have to Override getSectionsCount Function first to be able to set number of sections count")
     }
     
+    
+    // MARK: Refresh cotrol
+    func setupSwipeRefresh() -> Void {
+        refreshControl = UIRefreshControl()
+        
+        refreshControl?.tintColor = UIColor.gray
+        refreshControl?.addTarget(self, action: #selector(swipeRefreshTableView), for: .valueChanged)
+        self.menuTableView.addSubview(refreshControl!)
+    }
+    
+    @objc func swipeRefreshTableView() {
+        // override this when you need to refresh table data by swipe
+    }
+    
+    func endRefreshTableView() -> Void {
+        self.refreshControl?.endRefreshing()
+    }
+    
+    func checkRefreshControlState() -> Void {
+        DispatchQueue.main.async {
+            if (self.refreshControl?.isRefreshing)! {
+                self.refreshControl?.endRefreshing()
+            }
+        }
+    }
 }
 
 

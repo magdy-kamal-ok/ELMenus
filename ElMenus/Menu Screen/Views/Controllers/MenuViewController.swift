@@ -36,6 +36,7 @@ class MenuViewController: BaseMenuViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSwipeRefresh()
         listenToTagsList()
         listenToTagItems()
         tagsViewModel.getTagsList()
@@ -53,6 +54,7 @@ class MenuViewController: BaseMenuViewController {
     {
         itemsTagViewModel.observableTagItem.subscribe(onNext: { (itemsTagModel) in
             self.itemsTagModel = itemsTagModel
+            self.checkRefreshControlState()
             self.setTableViewDataSource()
             
         }, onError: { (error) in
@@ -78,6 +80,7 @@ class MenuViewController: BaseMenuViewController {
     
     func setTableViewDataSource()
     {
+        
         self.menuSections.removeAll()
         if self.tagsList.count != 0
         {
@@ -92,6 +95,12 @@ class MenuViewController: BaseMenuViewController {
         }
         self.menuTableView.reloadData()
     }
+    
+    override func swipeRefreshTableView() {
+        self.tagsViewModel.refreshTagsList()
+        self.itemsTagViewModel.refreshTagItemsList()
+    }
+
     override func getCellsCount(with section: Int) -> Int {
         
         let sectionType = self.menuSections[section]
