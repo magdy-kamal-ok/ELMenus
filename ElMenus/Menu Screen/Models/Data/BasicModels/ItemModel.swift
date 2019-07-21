@@ -15,7 +15,7 @@ class ItemModel: Object,Mappable {
     
     @objc dynamic var id:Int = 0
     @objc dynamic var name:String = ""
-    @objc dynamic var photoURL:String = ""
+    @objc dynamic var photoUrl:String = ""
     @objc dynamic var desc: String = ""
     
     required convenience public init?(map: Map) {
@@ -25,7 +25,7 @@ class ItemModel: Object,Mappable {
     func mapping(map: Map) {
         id                  <- map["id"]
         name                <- map["name"]
-        photoURL            <- map["photoURL"]
+        photoUrl            <- map["photoUrl"]
         desc                <- map["description"]
     }
 }

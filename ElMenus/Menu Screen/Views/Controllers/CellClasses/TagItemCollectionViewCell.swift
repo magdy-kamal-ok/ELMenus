@@ -23,10 +23,10 @@ class TagItemCollectionViewCell: UICollectionViewCell {
     func configureCell(tagModel: TagModel)
     {
         self.tagNameLbl.text = tagModel.tagName
-        GlobalUtilities.downloadImage(path: tagModel.photoURL, placeholder: nil, into: self.tagImageView, indicator: nil)
+        GlobalUtilities.downloadImage(path: tagModel.photoUrl, placeholder: nil, into: self.tagImageView, indicator: nil)
         
         DispatchQueue.main.async {
-            self.containerTitleView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
+            self.containerTitleView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 5)
         }
         
     }

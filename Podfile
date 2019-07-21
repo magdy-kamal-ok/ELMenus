@@ -24,6 +24,8 @@ target 'ElMenus' do
      
      pod 'SVProgressHUD'
      pod 'ObjectMapper+Realm'
+     
+     pod 'NotificationBannerSwift'
  
 
   target 'ElMenusTests' do

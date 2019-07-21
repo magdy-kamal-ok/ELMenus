@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol TagTableViewCellDelegate: class{
+    
+    func didSelectCell(tagModel: TagModel)
+    func loadMoreTags()
+}
+
 class TagTableViewCell: UITableViewCell {
     
     @IBOutlet weak var tagsCollectionView: UICollectionView!
     private var tagsList = [TagModel]()
-    
+    weak var tagTableViewCellDelegate:TagTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         self.tagsCollectionView.delegate = self
@@ -52,7 +58,16 @@ extension TagTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
+        if indexPath.row == self.tagsList.count - 1
+        {
+            tagTableViewCellDelegate?.loadMoreTags()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let tagModel = self.tagsList[indexPath.row]
+        self.tagTableViewCellDelegate?.didSelectCell(tagModel: tagModel)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042424DC22E4043F007349E9 /* BaseNetworkConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042424DB22E4043F007349E9 /* BaseNetworkConnectionViewModel.swift */; };
+		042424DE22E411A2007349E9 /* ItemsTagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042424DD22E411A2007349E9 /* ItemsTagViewModel.swift */; };
 		04250A5922E35EEE00AE1989 /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432955222E2A62800C4C075 /* BaseMenuViewController.swift */; };
 		04250A5F22E35EEE00AE1989 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432955A22E2AE0800C4C075 /* TagModel.swift */; };
 		04250A6022E35EEE00AE1989 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432955F22E2AF6C00C4C075 /* ItemModel.swift */; };
@@ -94,6 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042424DB22E4043F007349E9 /* BaseNetworkConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkConnectionViewModel.swift; sourceTree = "<group>"; };
+		042424DD22E411A2007349E9 /* ItemsTagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTagViewModel.swift; sourceTree = "<group>"; };
 		04250A5722E35B0300AE1989 /* ItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRepository.swift; sourceTree = "<group>"; };
 		04250A7422E35FD700AE1989 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		04250A7622E3815400AE1989 /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
@@ -173,6 +177,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042424DA22E4042B007349E9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				042424DB22E4043F007349E9 /* BaseNetworkConnectionViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		042A8A2922E0EEFD005B4658 /* GloabalModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +314,9 @@
 		0444EE3F22E2405F00EA1E55 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				042424DA22E4042B007349E9 /* Base */,
 				04250A7622E3815400AE1989 /* TagsViewModel.swift */,
+				042424DD22E411A2007349E9 /* ItemsTagViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -706,6 +720,7 @@
 				04250A7322E35F6600AE1989 /* ItemsRepository.swift in Sources */,
 				04250A5922E35EEE00AE1989 /* BaseMenuViewController.swift in Sources */,
 				04250A5F22E35EEE00AE1989 /* TagModel.swift in Sources */,
+				042424DC22E4043F007349E9 /* BaseNetworkConnectionViewModel.swift in Sources */,
 				04250A6022E35EEE00AE1989 /* ItemModel.swift in Sources */,
 				04250A8022E3B1AA00AE1989 /* ItemTableViewCell.swift in Sources */,
 				04250A6122E35EEE00AE1989 /* TagsResponseModel.swift in Sources */,
@@ -724,6 +739,7 @@
 				04250A6D22E35EEE00AE1989 /* UIHelper.swift in Sources */,
 				04250A7D22E3AA0500AE1989 /* UIViewExtension.swift in Sources */,
 				04250A7922E385EA00AE1989 /* TagItemCollectionViewCell.swift in Sources */,
+				042424DE22E411A2007349E9 /* ItemsTagViewModel.swift in Sources */,
 				04250A6E22E35EEE00AE1989 /* GlobalUtilities.swift in Sources */,
 				04250A6F22E35EEE00AE1989 /* AppDelegate.swift in Sources */,
 				04250A7522E35FD700AE1989 /* MenuViewController.swift in Sources */,

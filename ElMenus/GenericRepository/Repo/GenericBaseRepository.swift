@@ -65,8 +65,8 @@ GenericDataSourceContract {
             switch subObj
             {
                 case .next(let responseObj):
-                    self.objSubjectRemote.onNext(responseObj)
                     self.insert(genericDataModel: responseObj as! LOCAL)
+                    self.objSubjectRemote.onNext(responseObj)
                     self.objSubjectDao.onNext(responseObj as! LOCAL)
                 case .error(let error):
                     self.objSubjectError.onNext(ErrorModel(desc: error.localizedDescription, code: 404))

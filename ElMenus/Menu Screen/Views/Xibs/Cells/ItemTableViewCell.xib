@@ -19,16 +19,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJs-eV-imu" userLabel="mainView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="158.5"/>
+                        <rect key="frame" x="8" y="8" width="304" height="142.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-GS-gwV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="158.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="142.5"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OaQ-Hk-FSz" userLabel="containerView">
-                                <rect key="frame" x="0.0" y="158.5" width="320" height="0.0"/>
+                                <rect key="frame" x="0.0" y="142.5" width="304" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYw-xZ-ROF">
-                                        <rect key="frame" x="8" y="0.0" width="304" height="0.0"/>
+                                        <rect key="frame" x="8" y="0.0" width="288" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -56,13 +62,18 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MJs-eV-imu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ekt-Gb-ZNs"/>
-                    <constraint firstItem="MJs-eV-imu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="GCc-Wk-RpO"/>
-                    <constraint firstAttribute="trailing" secondItem="MJs-eV-imu" secondAttribute="trailing" id="Sgf-6j-TwY"/>
-                    <constraint firstAttribute="bottom" secondItem="MJs-eV-imu" secondAttribute="bottom" id="ZzB-ae-1cb"/>
+                    <constraint firstItem="MJs-eV-imu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Ekt-Gb-ZNs"/>
+                    <constraint firstItem="MJs-eV-imu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="GCc-Wk-RpO"/>
+                    <constraint firstAttribute="trailing" secondItem="MJs-eV-imu" secondAttribute="trailing" constant="8" id="Sgf-6j-TwY"/>
+                    <constraint firstAttribute="bottom" secondItem="MJs-eV-imu" secondAttribute="bottom" constant="8" id="ZzB-ae-1cb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerTitleView" destination="OaQ-Hk-FSz" id="Qg1-dW-OQH"/>
+                <outlet property="itemImageView" destination="l1X-GS-gwV" id="qUR-t2-mrw"/>
+                <outlet property="itemNameLbl" destination="yYw-xZ-ROF" id="swX-uM-45Y"/>
+            </connections>
             <point key="canvasLocation" x="90" y="143"/>
         </tableViewCell>
     </objects>

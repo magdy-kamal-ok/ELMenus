@@ -14,7 +14,7 @@ class UIHelper {
     class func showProgressBarWithDimView() {
         SVProgressHUD().defaultMaskType = .black
         SVProgressHUD().defaultAnimationType = .flat
-        SVProgressHUD.setForegroundColor(UIColor(rgb: 10, green: 180, blue: 228, alpha: 1.0))
+        SVProgressHUD.setForegroundColor(UIColor(named:"BasicColor")!)
         SVProgressHUD.show()
     }
     class func dissmissProgressBar() {

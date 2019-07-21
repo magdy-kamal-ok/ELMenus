@@ -14,7 +14,7 @@ import ObjectMapper_Realm
 class TagModel: Object,Mappable {
     
     @objc dynamic var tagName:String = ""
-    @objc dynamic var photoURL:String = ""
+    @objc dynamic var photoUrl:String = ""
   
     required convenience public init?(map: Map) {
         self.init()
@@ -23,7 +23,7 @@ class TagModel: Object,Mappable {
     func mapping(map: Map) {
         
         tagName             <- map["tagName"]
-        photoURL            <- map["photoURL"]
+        photoUrl            <- map["photoURL"]
 
         
         

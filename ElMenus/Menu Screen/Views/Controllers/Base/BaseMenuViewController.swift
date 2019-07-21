@@ -56,7 +56,7 @@ class BaseMenuViewController: UIViewController {
     }
     
     
-    func getCellHeight() -> CGFloat {
+    func getCellHeight(indexPath:IndexPath) -> CGFloat {
         preconditionFailure("You have to Override getCellHeight Function first to be able to set cell height")
     }
     
@@ -70,28 +70,6 @@ class BaseMenuViewController: UIViewController {
         preconditionFailure("You have to Override getSectionsCount Function first to be able to set number of sections count")
     }
     
-    
-    // MARK: - Loading Progress
-    // MARK: Show
-    
-    public func showProgressLoaderIndicator(){
-        DispatchQueue.main.async {
-            UIHelper.showProgressBarWithDimView()
-        }
-        
-    }
-    
-    
-    // MARK: Hide
-    
-    public func hideProgressLoaderIndicator(){
-        DispatchQueue.main.async {
-            UIHelper.dissmissProgressBar()
-        }
-        
-    }
-    
-    
 }
 
 
@@ -103,7 +81,7 @@ extension BaseMenuViewController : UITableViewDataSource{
     // MARK: Height for cell
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return getCellHeight()
+        return getCellHeight(indexPath:indexPath)
     }
     
     // MARK: Number of Sections
@@ -129,6 +107,15 @@ extension BaseMenuViewController : UITableViewDataSource{
         didSelectCellAt(indexPath: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 50
+    }
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return setupCustomHeaderView(section: section)
+    }
+        
     @objc func getCustomCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return UITableViewCell.init()
@@ -136,7 +123,11 @@ extension BaseMenuViewController : UITableViewDataSource{
     
     @objc func didSelectCellAt(indexPath: IndexPath)  {
         
-        
+    }
+    
+    @objc func setupCustomHeaderView(section : Int) -> UIView?
+    {
+        return nil
     }
 }
 
