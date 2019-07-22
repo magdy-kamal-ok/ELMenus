@@ -36,6 +36,8 @@
 		04250A7D22E3AA0500AE1989 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7C22E3AA0500AE1989 /* UIViewExtension.swift */; };
 		04250A8022E3B1AA00AE1989 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04250A7E22E3B1AA00AE1989 /* ItemTableViewCell.swift */; };
 		04250A8122E3B1AA00AE1989 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04250A7F22E3B1AA00AE1989 /* ItemTableViewCell.xib */; };
+		04292C5022E4EFF800EF6AD4 /* TagItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04292C4E22E4EFF800EF6AD4 /* TagItemViewController.swift */; };
+		04292C5122E4EFF800EF6AD4 /* TagItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04292C4F22E4EFF800EF6AD4 /* TagItemViewController.xib */; };
 		042A8A3722E0EEFE005B4658 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */; };
 		042A8A3822E0EEFE005B4658 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */; };
 		042A8A3A22E0EEFE005B4658 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A2C22E0EEFD005B4658 /* UIColorExtension.swift */; };
@@ -73,6 +75,10 @@
 		045CF9DA22E0A4750093F25E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CF9D822E0A4750093F25E /* LaunchScreen.storyboard */; };
 		045CF9E522E0A4750093F25E /* ElMenusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CF9E422E0A4750093F25E /* ElMenusTests.swift */; };
 		045CF9F022E0A4750093F25E /* ElMenusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CF9EF22E0A4750093F25E /* ElMenusUITests.swift */; };
+		0485A23922E5628D007E740D /* ZoomTransitionAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485A23822E5628D007E740D /* ZoomTransitionAnimating.swift */; };
+		0485A23B22E56309007E740D /* ZoomTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485A23A22E56309007E740D /* ZoomTransitionAnimator.swift */; };
+		0485A23F22E565FA007E740D /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485A23E22E565FA007E740D /* CustomNavigationController.swift */; };
+		0485A24122E56DE4007E740D /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485A24022E56DE4007E740D /* UINavigationBarExtension.swift */; };
 		0B14AB8EA9F493F9D5D4703B /* Pods_ElMenusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A112366F200AD3084A59A5D2 /* Pods_ElMenusUITests.framework */; };
 		83E0A5C783EFD31C12E62F4A /* Pods_ElMenusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF1E7457DECAB143D05CD3 /* Pods_ElMenusTests.framework */; };
 		A0C66BDF94B22EF249509CE8 /* Pods_ElMenus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DFA6D79E011F467F7EC985 /* Pods_ElMenus.framework */; };
@@ -106,6 +112,8 @@
 		04250A7C22E3AA0500AE1989 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		04250A7E22E3B1AA00AE1989 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		04250A7F22E3B1AA00AE1989 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		04292C4E22E4EFF800EF6AD4 /* TagItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItemViewController.swift; sourceTree = "<group>"; };
+		04292C4F22E4EFF800EF6AD4 /* TagItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagItemViewController.xib; sourceTree = "<group>"; };
 		042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		042A8A2C22E0EEFD005B4658 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		042A8A2D22E0EEFD005B4658 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -138,6 +146,10 @@
 		045CF9EB22E0A4750093F25E /* ElMenusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElMenusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		045CF9EF22E0A4750093F25E /* ElMenusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElMenusUITests.swift; sourceTree = "<group>"; };
 		045CF9F122E0A4750093F25E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0485A23822E5628D007E740D /* ZoomTransitionAnimating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionAnimating.swift; sourceTree = "<group>"; };
+		0485A23A22E56309007E740D /* ZoomTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionAnimator.swift; sourceTree = "<group>"; };
+		0485A23E22E565FA007E740D /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		0485A24022E56DE4007E740D /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		3917FB1F76EBE2863BA7E385 /* Pods-ElMenusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElMenusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ElMenusTests/Pods-ElMenusTests.release.xcconfig"; sourceTree = "<group>"; };
 		57CF1E7457DECAB143D05CD3 /* Pods_ElMenusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ElMenusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC7F04F292EAFAAC7D6CB1B /* Pods-ElMenusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ElMenusUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ElMenusUITests/Pods-ElMenusUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +197,40 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		04292C4A22E4EFBF00EF6AD4 /* TagItemDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0485A23622E56253007E740D /* Transtion */,
+				04292C4B22E4EFCD00EF6AD4 /* Views */,
+			);
+			path = TagItemDetails;
+			sourceTree = "<group>";
+		};
+		04292C4B22E4EFCD00EF6AD4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04292C4D22E4EFDB00EF6AD4 /* Controllers */,
+				04292C4C22E4EFD600EF6AD4 /* Xibs */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04292C4C22E4EFD600EF6AD4 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				04292C4F22E4EFF800EF6AD4 /* TagItemViewController.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		04292C4D22E4EFDB00EF6AD4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04292C4E22E4EFF800EF6AD4 /* TagItemViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		042A8A2922E0EEFD005B4658 /* GloabalModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +247,7 @@
 				042A8A2E22E0EEFD005B4658 /* SwiftTypeExtensions.swift */,
 				042A8A2F22E0EEFD005B4658 /* CollectionExtensions.swift */,
 				04250A7C22E3AA0500AE1989 /* UIViewExtension.swift */,
+				0485A24022E56DE4007E740D /* UINavigationBarExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -403,6 +450,8 @@
 		045CF9CE22E0A4730093F25E /* ElMenus */ = {
 			isa = PBXGroup;
 			children = (
+				0485A23C22E565D3007E740D /* CustomComponents */,
+				04292C4A22E4EFBF00EF6AD4 /* TagItemDetails */,
 				0444EE3E22E2404200EA1E55 /* Menu Screen */,
 				042A8A5322E0F29A005B4658 /* GenericRepository */,
 				042A8A3022E0EEFD005B4658 /* Constants */,
@@ -433,6 +482,31 @@
 				045CF9F122E0A4750093F25E /* Info.plist */,
 			);
 			path = ElMenusUITests;
+			sourceTree = "<group>";
+		};
+		0485A23622E56253007E740D /* Transtion */ = {
+			isa = PBXGroup;
+			children = (
+				0485A23822E5628D007E740D /* ZoomTransitionAnimating.swift */,
+				0485A23A22E56309007E740D /* ZoomTransitionAnimator.swift */,
+			);
+			path = Transtion;
+			sourceTree = "<group>";
+		};
+		0485A23C22E565D3007E740D /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0485A23D22E565EA007E740D /* CustomNavigationController */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		0485A23D22E565EA007E740D /* CustomNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				0485A23E22E565FA007E740D /* CustomNavigationController.swift */,
+			);
+			path = CustomNavigationController;
 			sourceTree = "<group>";
 		};
 		8E03C1695904CBCEE13E740C /* Frameworks */ = {
@@ -568,6 +642,7 @@
 			files = (
 				0444EE5322E2456100EA1E55 /* TagTableViewCell.xib in Resources */,
 				0444EE5B22E2478A00EA1E55 /* TagItemCollectionViewCell.xib in Resources */,
+				04292C5122E4EFF800EF6AD4 /* TagItemViewController.xib in Resources */,
 				045CF9DA22E0A4750093F25E /* LaunchScreen.storyboard in Resources */,
 				0444EE4B22E240D800EA1E55 /* MenuViewController.xib in Resources */,
 				04250A8122E3B1AA00AE1989 /* ItemTableViewCell.xib in Resources */,
@@ -717,13 +792,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0485A24122E56DE4007E740D /* UINavigationBarExtension.swift in Sources */,
 				04250A7222E35F6600AE1989 /* TagsRepository.swift in Sources */,
 				04250A7722E3815400AE1989 /* TagsViewModel.swift in Sources */,
+				04292C5022E4EFF800EF6AD4 /* TagItemViewController.swift in Sources */,
 				04250A7322E35F6600AE1989 /* ItemsRepository.swift in Sources */,
 				04250A5922E35EEE00AE1989 /* BaseMenuViewController.swift in Sources */,
+				0485A23F22E565FA007E740D /* CustomNavigationController.swift in Sources */,
 				04250A5F22E35EEE00AE1989 /* TagModel.swift in Sources */,
 				042424DC22E4043F007349E9 /* BaseNetworkConnectionViewModel.swift in Sources */,
 				04250A6022E35EEE00AE1989 /* ItemModel.swift in Sources */,
+				0485A23B22E56309007E740D /* ZoomTransitionAnimator.swift in Sources */,
 				04250A8022E3B1AA00AE1989 /* ItemTableViewCell.swift in Sources */,
 				04250A6122E35EEE00AE1989 /* TagsResponseModel.swift in Sources */,
 				04250A6222E35EEE00AE1989 /* ItemsResponseModel.swift in Sources */,
@@ -741,6 +820,7 @@
 				04250A6D22E35EEE00AE1989 /* UIHelper.swift in Sources */,
 				04250A7D22E3AA0500AE1989 /* UIViewExtension.swift in Sources */,
 				04250A7922E385EA00AE1989 /* TagItemCollectionViewCell.swift in Sources */,
+				0485A23922E5628D007E740D /* ZoomTransitionAnimating.swift in Sources */,
 				042424DE22E411A2007349E9 /* ItemsTagViewModel.swift in Sources */,
 				04250A6E22E35EEE00AE1989 /* GlobalUtilities.swift in Sources */,
 				04250A6F22E35EEE00AE1989 /* AppDelegate.swift in Sources */,

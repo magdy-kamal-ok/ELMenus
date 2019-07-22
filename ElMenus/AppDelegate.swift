@@ -51,7 +51,7 @@ extension AppDelegate
     {
         let menuViewController  = MenuViewController(nibName: "MenuViewController", bundle: nil)
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationBar = UINavigationController.init(rootViewController: menuViewController)
+        let navigationBar = CustomNavigationController.init(rootViewController: menuViewController)
         navigationBar.navigationBar.barTintColor = UIColor(named:"BasicColor")
         
         self.window?.rootViewController = navigationBar

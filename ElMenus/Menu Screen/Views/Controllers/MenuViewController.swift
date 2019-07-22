@@ -144,6 +144,20 @@ class MenuViewController: BaseMenuViewController {
                 return cell
         }
     }
+    override func didSelectCellAt(indexPath: IndexPath) {
+        
+        let sectionType = self.menuSections[indexPath.section]
+        
+        switch sectionType {
+            case .tagsItemsSection:
+                if let itemsTagModel = self.itemsTagModel
+                {
+                    self.openTagItemDetails(itemModel: itemsTagModel.items.toArray()[indexPath.row])
+                }
+            default:
+            print("")
+        }
+    }
     override func setupCustomHeaderView(section : Int) -> UIView?{
         
         let view = UIView(frame: .zero)
@@ -162,6 +176,13 @@ class MenuViewController: BaseMenuViewController {
         return view
         
     }
+    func openTagItemDetails(itemModel:ItemModel)
+    {
+        let tagItemViewController = TagItemViewController.init(nibName: "TagItemViewController", bundle: nil)
+        tagItemViewController.itemDescription = itemModel.desc
+        tagItemViewController.itemName = itemModel.name
+        self.navigationController?.pushViewController(tagItemViewController, animated: true)
+    }
 }
 
 extension MenuViewController: TagTableViewCellDelegate{
@@ -174,4 +195,46 @@ extension MenuViewController: TagTableViewCellDelegate{
     }
     
     
+}
+
+extension MenuViewController: ZoomTransitionAnimating, ZoomTransitionDelegate {
+    var transitionSourceImageView: UIImageView {
+        let selectedIndexPath = self.menuTableView.indexPathForSelectedRow!
+        let sectionType = self.menuSections[selectedIndexPath.section]
+        switch sectionType {
+            case .tagsItemsSection:
+                let cell = self.menuTableView.cellForRow(at: selectedIndexPath) as! ItemTableViewCell
+                let imageView = UIImageView(image: cell.itemImageView.image)
+                imageView.contentMode = cell.itemImageView.contentMode;
+                imageView.clipsToBounds = true
+                imageView.isUserInteractionEnabled = false
+                var frameInSuperview = cell.itemImageView.convert(cell.itemImageView.frame, to: self.menuTableView.superview)
+                frameInSuperview.origin.x -= 8 // Left margin of ImageView from Cell
+                frameInSuperview.origin.y -= 8 // Top margin of ImageView from Cell
+                imageView.frame = frameInSuperview
+                return imageView
+            
+            case .tagsSection:
+                    return UIImageView.init()
+        }
+    }
+    
+    var transitionSourceBackgroundColor: UIColor? {
+        return self.menuTableView.backgroundColor
+    }
+    
+    var transitionDestinationImageViewFrame: CGRect {
+        let selectedIndexPath = self.menuTableView.indexPathForSelectedRow!
+        let sectionType = self.menuSections[selectedIndexPath.section]
+        switch sectionType {
+            case .tagsItemsSection:
+                let cell = self.menuTableView.cellForRow(at: selectedIndexPath) as! ItemTableViewCell
+                var frameInSuperview = cell.itemImageView.convert(cell.itemImageView.frame, to: self.menuTableView.superview)
+                frameInSuperview.origin.x -= 8 // Left margin of ImageView from Cell
+                frameInSuperview.origin.y -= 8 // Top margin of ImageView from Cell
+                return frameInSuperview
+            case .tagsSection:
+                return CGRect.zero
+        }
+    }
 }
