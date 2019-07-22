@@ -63,7 +63,7 @@ class BaseMenuViewController: UIViewController {
     func setupSwipeRefresh() -> Void {
         refreshControl = UIRefreshControl()
         
-        refreshControl?.tintColor = UIColor(named:"BasicColor")
+        refreshControl?.tintColor = UIColor(named:Constants.basicColor)
         refreshControl?.addTarget(self, action: #selector(swipeRefreshTableView), for: .valueChanged)
         self.menuTableView.addSubview(refreshControl!)
     }

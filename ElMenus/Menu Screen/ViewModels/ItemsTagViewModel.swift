@@ -49,7 +49,7 @@ class ItemsTagViewModel: BaseNetworkConnectionViewModel {
         
         itemsRepo.objObservableErrorModel.subscribe(onNext: { (errorModel) in
             self.hideProgressLoaderIndicator()
-            UIHelper.showInfoMessage(errorModel.desc, title: "ElMenus")
+            UIHelper.showInfoMessage(errorModel.desc, title: Constants.appName.localized)
         }, onError: { (error) in
             print(error)
         }, onCompleted: {

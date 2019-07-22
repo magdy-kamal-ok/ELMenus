@@ -70,18 +70,5 @@ extension TagTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource,
         self.tagTableViewCellDelegate?.didSelectCell(tagModel: tagModel)
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset
-        let inset = scrollView.contentInset
-        let y: CGFloat = offset.x - inset.left
-        let reload_distance: CGFloat = -15
-        if y < reload_distance{
-            scrollView.bounces = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                self.tagsCollectionView.bounces = true
-            }
-            print("refresh")
-        }
-    }
 }
 

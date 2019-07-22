@@ -15,7 +15,7 @@ class TagItemViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     let navBarHeight: CGFloat = 66.0
     var itemDescription:String = ""
-    var itemName:String = ""
+    var itemName:String = "" 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +29,23 @@ class TagItemViewController: UIViewController {
         super.viewDidAppear(animated)
 
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
+    }
     func addLeftNavbarBackButton()
     {
         
-        let backBarButton = UIBarButtonItem.init(image: UIImage.init(named: "ic_back_arrow"), style: .plain, target: self, action: #selector(backButtonClick))
+        let backBarButton = UIBarButtonItem.init(image: UIImage.init(named: Constants.backButtonImage), style: .plain, target: self, action: #selector(backButtonClick))
         backBarButton.tintColor = .white
         navigationItem.leftBarButtonItem = backBarButton
     }
+    
     @objc func backButtonClick()
     {
         self.navigationController?.popViewController(animated: true)
     }
+    
 }
 
 extension TagItemViewController:UIScrollViewDelegate
@@ -48,15 +53,18 @@ extension TagItemViewController:UIScrollViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
   
         
-        if scrollView.contentOffset.y > (self.itemImageView.frame.height - (3.0 * navBarHeight)) && self.navigationController?.navigationBar.backgroundImage(for: UIBarMetrics.default) == nil
+        if scrollView.contentOffset.y > (self.itemImageView.frame.height - (1.5 * navBarHeight)) && self.navigationController?.navigationBar.backgroundImage(for: UIBarMetrics.default) == nil
         {
-            self.navigationController?.navigationBar.setBackgroundImage(self.itemImageView.image, for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.setBackgroundImage(self.itemImageView.image, for: UIBarMetrics.default)
+            
             self.navigationController?.navigationBar.shadowImage = nil
+            
         }
-        else if scrollView.contentOffset.y < (self.itemImageView.frame.height - (3.0 * navBarHeight)) && self.navigationController?.navigationBar.backgroundImage(for: UIBarMetrics.default) != nil
+        else if scrollView.contentOffset.y < (self.itemImageView.frame.height - (1.5 * navBarHeight)) && self.navigationController?.navigationBar.backgroundImage(for: UIBarMetrics.default) != nil
         {
             self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
             self.navigationController?.navigationBar.shadowImage = UIImage()
+            
         }
 
     

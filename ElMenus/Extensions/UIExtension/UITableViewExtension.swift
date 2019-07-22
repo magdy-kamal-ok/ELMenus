@@ -20,7 +20,7 @@ extension UITableView {
         let identifier = String(describing: Cell.self)
         
         guard let cell = self.dequeueReusableCell(withIdentifier: identifier) as? Cell else {
-            fatalError("Error in cell")
+            fatalError("Error in dequeue cell")
         }
         
         return cell

@@ -11,7 +11,7 @@ import Alamofire
 
 class ItemsRepository: GenericBaseRepository<ItemsResponseModel, ItemsResponseModel> {
     
-    var tagName = "1000 - Deserts"
+    var tagName = ""
     
     
     override func getPredicate() -> NSPredicate? {

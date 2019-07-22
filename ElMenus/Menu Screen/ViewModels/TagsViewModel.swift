@@ -51,7 +51,7 @@ class TagsViewModel: BaseNetworkConnectionViewModel {
         
         tagsRepo.objObservableErrorModel.subscribe(onNext: { (errorModel) in
             self.hideProgressLoaderIndicator()
-            UIHelper.showInfoMessage(errorModel.desc, title: "ElMenus")
+            UIHelper.showInfoMessage(errorModel.desc, title: Constants.appName.localized)
         }, onError: { (error) in
             print(error)
         }, onCompleted: {
@@ -100,11 +100,11 @@ class TagsViewModel: BaseNetworkConnectionViewModel {
     }
     
     override func handleInternetConnectionReconnected() {
-        UIHelper.showInfoMessage("Please be Informed Your internet Connection Reconnected", title: "ElMenus")
+        UIHelper.showInfoMessage(Constants.internertConnectionReconnected.localized, title: Constants.appName.localized)
        self.refreshTagsList()
     }
     override func handleInternetConnectionDisconnected() {
-        UIHelper.showInfoMessage("Please be Informed Your internet Connection Disconnected", title: "ElMenus")
+        UIHelper.showInfoMessage(Constants.internertConnectionDisconnected.localized, title: Constants.appName.localized)
         
     }
 

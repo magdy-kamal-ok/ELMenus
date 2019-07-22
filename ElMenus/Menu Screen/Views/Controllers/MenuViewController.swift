@@ -36,6 +36,8 @@ class MenuViewController: BaseMenuViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setAttributedTitle()
+        setMenuTitle()
         setupSwipeRefresh()
         listenToTagsList()
         listenToTagItems()
@@ -79,13 +81,17 @@ class MenuViewController: BaseMenuViewController {
         
     }
     
+    func setMenuTitle()
+    {
+        self.title = Constants.menuScreenTitle.localized
+    }
     func setTableViewDataSource()
     {
         
         self.menuSections.removeAll()
         if self.tagsList.count != 0
         {
-            self.menuSections.append(.tagsSection("Tags"))
+            self.menuSections.append(.tagsSection(Constants.tagSectionTitle.localized))
         }
         if let itemsTagModel = self.itemsTagModel
         {
@@ -165,7 +171,7 @@ class MenuViewController: BaseMenuViewController {
         textLabel.textColor = .white
         textLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         view.addSubview(textLabel)
-        view.backgroundColor = UIColor(named:"BasicColor")
+        view.backgroundColor = UIColor(named:Constants.basicColor)
 
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8.0).isActive = true
