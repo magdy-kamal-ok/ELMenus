@@ -28,7 +28,7 @@ class TagItemCollectionViewCell: UICollectionViewCell {
         DispatchQueue.main.async {
             self.containerTitleView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 5)
         }
-        
     }
     
+
 }

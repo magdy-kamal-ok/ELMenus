@@ -25,4 +25,9 @@ class Constants {
     public static let menuScreenTitle = "menuScreenTitle"
     
 
+    // access identifiers
+    public static let tableViewIdentifier = "menuListTableView"
+    public static let backButtonIdentifier = "backButton"
+    public static let scrollViewItemDetailsIdentifier = "scrollView"
+
 }

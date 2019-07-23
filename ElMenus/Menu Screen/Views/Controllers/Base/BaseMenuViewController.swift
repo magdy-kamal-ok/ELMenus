@@ -20,7 +20,7 @@ class BaseMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setAccessibleIdentifiers()
         setupTableDataSource()
         setupCellNibNames()
     }
@@ -43,7 +43,10 @@ class BaseMenuViewController: UIViewController {
         // This methode will overridw at sub classes
     }
     
-    
+    public func setAccessibleIdentifiers()
+    {
+        self.menuTableView.accessibilityIdentifier = Constants.tableViewIdentifier
+    }
     func getCellHeight(indexPath:IndexPath) -> CGFloat {
         preconditionFailure("You have to Override getCellHeight Function first to be able to set cell height")
     }

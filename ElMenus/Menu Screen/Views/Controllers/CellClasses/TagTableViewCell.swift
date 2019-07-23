@@ -19,11 +19,12 @@ class TagTableViewCell: UITableViewCell {
     @IBOutlet weak var tagsCollectionView: UICollectionView!
     private var tagsList = [TagModel]()
     weak var tagTableViewCellDelegate:TagTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.tagsCollectionView.delegate = self
-        self.tagsCollectionView.dataSource = self
-        self.tagsCollectionView.register(UINib.init(nibName: "TagItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagItemCollectionViewCell")
+        self.setAccessibility()
+        self.setDelegateAndDataSource()
+       
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,7 +38,19 @@ class TagTableViewCell: UITableViewCell {
         self.tagsList = tagsList
         self.tagsCollectionView.reloadData()
     }
+ 
+    private func setDelegateAndDataSource()
+    {
+        self.tagsCollectionView.delegate = self
+        self.tagsCollectionView.dataSource = self
+        self.tagsCollectionView.register(UINib.init(nibName: "TagItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagItemCollectionViewCell")
+    }
     
+    private func setAccessibility()
+    {
+        self.isAccessibilityElement = true
+        self.tagsCollectionView.isAccessibilityElement = true
+    }
 }
 
 extension TagTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout

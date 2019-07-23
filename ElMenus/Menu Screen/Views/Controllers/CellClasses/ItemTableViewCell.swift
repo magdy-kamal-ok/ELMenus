@@ -34,6 +34,7 @@ class ItemTableViewCell: UITableViewCell {
             self.itemImageView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
             self.containerTitleView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
         }
-        
     }
+    
+
 }

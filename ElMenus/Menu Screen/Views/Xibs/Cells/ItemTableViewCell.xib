@@ -23,6 +23,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-GS-gwV">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="142.5"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -68,6 +71,9 @@
                     <constraint firstAttribute="bottom" secondItem="MJs-eV-imu" secondAttribute="bottom" constant="8" id="ZzB-ae-1cb"/>
                 </constraints>
             </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="containerTitleView" destination="OaQ-Hk-FSz" id="Qg1-dW-OQH"/>

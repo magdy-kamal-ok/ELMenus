@@ -21,7 +21,7 @@ class TagItemViewController: UIViewController {
         super.viewDidLoad()
         addLeftNavbarBackButton()
         self.navigationController?.navigationBar.setAttributedTitle()
-        self.scrollView.delegate = self
+        setScrollViewDelegateAndIdentifier()
     }
     
 
@@ -33,10 +33,16 @@ class TagItemViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
     }
+    func setScrollViewDelegateAndIdentifier()
+    {
+        self.scrollView.delegate = self
+        self.scrollView.accessibilityIdentifier = Constants.scrollViewItemDetailsIdentifier
+    }
     func addLeftNavbarBackButton()
     {
         
         let backBarButton = UIBarButtonItem.init(image: UIImage.init(named: Constants.backButtonImage), style: .plain, target: self, action: #selector(backButtonClick))
+        backBarButton.accessibilityIdentifier = Constants.backButtonIdentifier
         backBarButton.tintColor = .white
         navigationItem.leftBarButtonItem = backBarButton
     }
