@@ -12,9 +12,14 @@ import ObjectMapper
 
 class GenericDao<R:Object>: GenericDataLocalSource{
     
+    var realm: Realm!
+    
+    init(realm:Realm) {
+        
+        self.realm  = realm
+    }
     func insert(genericDataModel : R) {
         do {
-            let realm = try Realm()
             realm.beginWrite()
             realm.add(genericDataModel,update:true)
             try realm.commitWrite()
@@ -26,7 +31,6 @@ class GenericDao<R:Object>: GenericDataLocalSource{
     
     func fetch(predicate:NSPredicate?)->R? {
         do {
-            let realm = try  Realm()
             if let predicate = predicate
             {
                 return realm.objects(R.self).filter(predicate).first
@@ -44,7 +48,6 @@ class GenericDao<R:Object>: GenericDataLocalSource{
     
     func delete(){
         do {
-            let realm = try Realm()
             realm.beginWrite()
             realm.delete(realm.objects(R.self))
             try realm.commitWrite()

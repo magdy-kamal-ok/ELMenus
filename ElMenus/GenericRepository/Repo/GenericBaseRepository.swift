@@ -17,7 +17,7 @@ class GenericBaseRepository<REMOTE:Mappable,LOCAL:Object>:
 GenericDataSourceContract {
     
     private let objGenericRequestClass:GenericRequestClass = GenericRequestClass<REMOTE>()
-    private let objGenericDao:GenericDao = GenericDao<LOCAL>()
+    private var objGenericDao:GenericDao<LOCAL>!
     
     private var objSubjectDao = PublishSubject<LOCAL>()
     private var objSubjectRemote = PublishSubject<REMOTE>()
@@ -38,17 +38,26 @@ GenericDataSourceContract {
         return objSubjectError.asObservable()
     }
     
+    init() {
+        do {
+            let realm = try Realm()
+            self.objGenericDao = GenericDao<LOCAL>(realm: realm)
+        } catch (let error) {
+            fatalError(error.localizedDescription)
+        }
+       
+    }
+    
     func getGenericData(url:String, data:Parameters?, headers:HTTPHeaders?, bool:Bool = true)
     {
         if bool{
             if let cashedData = self.fetch(predicate: self.getPredicate())
             {
-                
                 objSubjectDao.onNext(cashedData)
-
                 self.callBackEndApi(url: url, params: data, headers: headers)
             }
             else{
+                self.objSubjectError.onNext(ErrorModel(desc: Constants.noExisitingCashedData.localized, code: 2000))
                 self.callBackEndApi(url: url, params: data, headers: headers)
             }
 

@@ -9,6 +9,7 @@
 "appName" = "ElMenus";
 "internertConnectionDisconnected" = "Please be Informed Your internet Connection Disconnected";
 "internertConnectionReconnected" = "Please be Informed Your internet Connection Reconnected";
+"noExisitingCashedData" = "Please be Informed That There is no cached data we will try request this data";
 "tagSectionTitle" = "Tags";
 "menuScreenTitle" = "Menu";
 

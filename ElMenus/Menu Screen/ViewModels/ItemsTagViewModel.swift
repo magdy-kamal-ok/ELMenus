@@ -48,8 +48,7 @@ class ItemsTagViewModel: BaseNetworkConnectionViewModel {
         }).disposed(by: disposeBag)
         
         itemsRepo.objObservableErrorModel.subscribe(onNext: { (errorModel) in
-            self.hideProgressLoaderIndicator()
-            UIHelper.showInfoMessage(errorModel.desc, title: Constants.appName.localized)
+            self.handleErrorModel(errorModel: errorModel)
         }, onError: { (error) in
             print(error)
         }, onCompleted: {
@@ -85,4 +84,13 @@ class ItemsTagViewModel: BaseNetworkConnectionViewModel {
         
     }
     
+    func handleErrorModel(errorModel:ErrorModel)
+    {
+        self.hideProgressLoaderIndicator()
+        UIHelper.showInfoMessage(errorModel.desc, title: Constants.appName.localized)
+        if errorModel.code == 2000
+        {
+            self.refreshTagItemsList()
+        }
+    }
 }

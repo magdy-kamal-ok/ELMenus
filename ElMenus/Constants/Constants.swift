@@ -23,7 +23,7 @@ class Constants {
     public static let tagSectionTitle = "tagSectionTitle"
     public static let internertConnectionReconnected = "internertConnectionReconnected"
     public static let menuScreenTitle = "menuScreenTitle"
-    
+    public static let  noExisitingCashedData = "noExisitingCashedData"
 
     // access identifiers
     public static let tableViewIdentifier = "menuListTableView"
