@@ -18,6 +18,7 @@ struct ErrorModel : Error{
 }
 enum ErrorCodes:Int{
     case noCached = 2000
+    case remoteError = 2001
 }
 
 

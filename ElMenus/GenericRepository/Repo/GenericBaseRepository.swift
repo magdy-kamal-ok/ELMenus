@@ -78,7 +78,7 @@ GenericDataSourceContract {
                     self.objSubjectRemote.onNext(responseObj)
                     self.objSubjectDao.onNext(responseObj as! LOCAL)
                 case .error(let error):
-                    self.objSubjectError.onNext(ErrorModel(desc: error.localizedDescription, code: 404))
+                    self.objSubjectError.onNext(ErrorModel(desc: error.localizedDescription, code: ErrorCodes.remoteError.rawValue))
                 
                 case .completed:
                     print("Completed")

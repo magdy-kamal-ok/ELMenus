@@ -32,7 +32,6 @@ open class ZoomTransitionAnimator: NSObject {
     }
 }
 
-// MARK: - UIViewControllerAnimatedTransitioning
 
 extension ZoomTransitionAnimator: UIViewControllerAnimatedTransitioning {
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -44,7 +43,7 @@ extension ZoomTransitionAnimator: UIViewControllerAnimatedTransitioning {
     }
     
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        // Setup for animation transition
+
         guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
             let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
@@ -60,12 +59,10 @@ extension ZoomTransitionAnimator: UIViewControllerAnimatedTransitioning {
                 return
         }
         
-        // Add a alphaView To be overexposed, so background becomes dark in animation
         let alphaView = UIView(frame: transitionContext.finalFrame(for: toVC))
         alphaView.backgroundColor = sourceTransition.transitionSourceBackgroundColor
         containerView.addSubview(alphaView)
         
-        // Transition source of image to move me to add to the last
         let sourceImageView = sourceTransition.transitionSourceImageView
         containerView.addSubview(sourceImageView)
         
@@ -85,7 +82,7 @@ extension ZoomTransitionAnimator: UIViewControllerAnimatedTransitioning {
                                                                   didCompleteTransition: !transitionContext.transitionWasCancelled,
                                                                   animatingSourceImageView: sourceImageView)
                     transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-                    // Remove the views from superviews to release the references
+
                     alphaView.removeFromSuperview()
                     sourceImageView.removeFromSuperview()
                     
