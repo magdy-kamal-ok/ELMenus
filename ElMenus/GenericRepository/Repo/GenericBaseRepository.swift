@@ -57,7 +57,7 @@ GenericDataSourceContract {
                 self.callBackEndApi(url: url, params: data, headers: headers)
             }
             else{
-                self.objSubjectError.onNext(ErrorModel(desc: Constants.noExisitingCashedData.localized, code: 2000))
+                self.objSubjectError.onNext(ErrorModel(desc: Constants.noExisitingCashedData.localized, code: ErrorCodes.noCached.rawValue))
                 self.callBackEndApi(url: url, params: data, headers: headers)
             }
 

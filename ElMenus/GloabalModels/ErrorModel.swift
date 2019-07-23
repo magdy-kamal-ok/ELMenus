@@ -16,5 +16,8 @@ struct ErrorModel : Error{
     let desc:String
     let code:Int
 }
+enum ErrorCodes:Int{
+    case noCached = 2000
+}
 
 

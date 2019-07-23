@@ -28,4 +28,8 @@ class ItemModel: Object,Mappable {
         photoUrl            <- map["photoUrl"]
         desc                <- map["description"]
     }
+    
+    override class func primaryKey() -> String? {
+        return "id";
+    }
 }

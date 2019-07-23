@@ -84,13 +84,27 @@ class ItemsTagViewModel: BaseNetworkConnectionViewModel {
         
     }
     
+    func showInfoMessage(msg:String)
+    {
+        UIHelper.showInfoMessage(msg, title: Constants.appName.localized)
+    }
+    
     func handleErrorModel(errorModel:ErrorModel)
     {
+        
         self.hideProgressLoaderIndicator()
-        UIHelper.showInfoMessage(errorModel.desc, title: Constants.appName.localized)
-        if errorModel.code == 2000
+        if errorModel.code == ErrorCodes.noCached.rawValue
         {
-            self.refreshTagItemsList()
+            if !self.isNetworkConnected()
+            {
+                
+                self.refreshTagItemsList()
+            }
+        }
+        else
+        {
+            
+            showInfoMessage(msg: errorModel.desc)
         }
     }
 }

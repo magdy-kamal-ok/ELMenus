@@ -50,8 +50,7 @@ class TagsViewModel: BaseNetworkConnectionViewModel {
         }).disposed(by: disposeBag)
         
         tagsRepo.objObservableErrorModel.subscribe(onNext: { (errorModel) in
-            self.hideProgressLoaderIndicator()
-            UIHelper.showInfoMessage(errorModel.desc, title: Constants.appName.localized)
+            self.handleErrorModel(errorModel: errorModel)
         }, onError: { (error) in
             print(error)
         }, onCompleted: {
@@ -99,13 +98,34 @@ class TagsViewModel: BaseNetworkConnectionViewModel {
         self.getTagsList()
     }
     
+    func showInfoMessage(msg:String)
+    {
+        UIHelper.showInfoMessage(msg, title: Constants.appName.localized)
+    }
     override func handleInternetConnectionReconnected() {
-        UIHelper.showInfoMessage(Constants.internertConnectionReconnected.localized, title: Constants.appName.localized)
+       showInfoMessage(msg: Constants.internertConnectionReconnected.localized)
        self.refreshTagsList()
     }
     override func handleInternetConnectionDisconnected() {
-        UIHelper.showInfoMessage(Constants.internertConnectionDisconnected.localized, title: Constants.appName.localized)
+        showInfoMessage(msg: Constants.internertConnectionDisconnected.localized)
         
+    }
+    func handleErrorModel(errorModel:ErrorModel)
+    {
+
+        self.hideProgressLoaderIndicator()
+        if errorModel.code == ErrorCodes.noCached.rawValue
+        {
+            if !self.isNetworkConnected()
+            {
+                showInfoMessage(msg: errorModel.desc)
+            }
+        }
+        else
+        {
+          showInfoMessage(msg: errorModel.desc)
+            
+        }
     }
 
 }

@@ -24,8 +24,9 @@ class TagModel: Object,Mappable {
         
         tagName             <- map["tagName"]
         photoUrl            <- map["photoURL"]
-
         
-        
+    }
+    override class func primaryKey() -> String? {
+        return "tagName";
     }
 }
