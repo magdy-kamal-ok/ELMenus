@@ -17,20 +17,20 @@ class ElMenusGenericDaoTests: XCTestCase {
     override func setUp() {
 
         do {
-            
+
             var realmConfiguration = Realm.Configuration.init()
             realmConfiguration.inMemoryIdentifier = "realmTest"
             testRealm = try Realm(configuration: realmConfiguration)
-            
+
         } catch (let error) {
             fatalError(error.localizedDescription)
         }
     }
 
     override func tearDown() {
-       testRealm = nil
+        testRealm = nil
     }
-    
+
     func testInsertAndFetchTagsResponseModel()
     {
         let sut = GenericDao<TagsResponseModel>.init(realm: testRealm)
@@ -64,7 +64,7 @@ class ElMenusGenericDaoTests: XCTestCase {
         let savedItemsResponseModel = sut.fetch(predicate: predicate)
         XCTAssertEqual(savedItemsResponseModel?.tagName, "my tag")
     }
-    
+
     func testInsertAndFetchItemModel()
     {
         let sut = GenericDao<ItemModel>.init(realm: testRealm)

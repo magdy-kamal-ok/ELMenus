@@ -30,7 +30,7 @@ class ElMenusGenericRequestTests: XCTestCase {
             "Content-Type": "application/json",
             ]
         let offset = 1
-        let expectation = XCTestExpectation.init(description: "Make request Call")
+        let expectation = XCTestExpectation.init(description: "test success tags request")
         var responseResult: TagsResponseModel!
         var errorResponse:Error!
         sut.callApi(url: Constants.tagesApiUrl + "\(offset)" , params: nil, headers: headers)?.subscribe({ (subObj) in
@@ -60,7 +60,7 @@ class ElMenusGenericRequestTests: XCTestCase {
             "Content-Type": "application/json",
             ]
         let offset = 1
-        let expectation = XCTestExpectation.init(description: "Make request Call")
+        let expectation = XCTestExpectation.init(description: "test filure tags")
         var responseResult: TagsResponseModel!
         var errorResponse:Error!
         let url = "https://elmenus-assignment.getsandboxs.com/tags/\(offset)"
@@ -91,7 +91,7 @@ class ElMenusGenericRequestTests: XCTestCase {
             "Content-Type": "application/json",
             ]
         let tagName = "Dessert"
-        let expectation = XCTestExpectation.init(description: "Make request Call")
+        let expectation = XCTestExpectation.init(description: "test succes")
         var responseResult: ItemsResponseModel!
         var errorResponse:Error!
         sut.callApi(url: Constants.itemsApiUrl + "\(tagName)" , params: nil, headers: headers)?.subscribe({ (subObj) in
@@ -121,7 +121,7 @@ class ElMenusGenericRequestTests: XCTestCase {
             "Content-Type": "application/json",
             ]
         let tagName = "Dessert"
-        let expectation = XCTestExpectation.init(description: "Make request Call")
+        let expectation = XCTestExpectation.init(description: "test failure")
         var responseResult: ItemsResponseModel!
         var errorResponse:Error!
         let url = "https://elmenus-assignment.getsandboxs.com/items/\(tagName)"

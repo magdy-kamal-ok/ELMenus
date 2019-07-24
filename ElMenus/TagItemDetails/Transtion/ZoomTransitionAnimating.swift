@@ -16,6 +16,6 @@ public protocol ZoomTransitionAnimating: class {
 
 @objc public protocol ZoomTransitionDelegate: class {
     @objc optional func zoomTransitionAnimator(animator: ZoomTransitionAnimator,
-                                               didCompleteTransition didComplete: Bool,
-                                               animatingSourceImageView imageView: UIImageView)
+        didCompleteTransition didComplete: Bool,
+        animatingSourceImageView imageView: UIImageView)
 }

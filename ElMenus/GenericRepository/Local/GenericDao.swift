@@ -10,26 +10,26 @@ import Foundation
 import RealmSwift
 import ObjectMapper
 
-class GenericDao<R:Object>: GenericDataLocalSource{
-    
+class GenericDao<R:Object>: GenericDataLocalSource {
+
     var realm: Realm!
-    
-    init(realm:Realm) {
-        
-        self.realm  = realm
+
+    init(realm: Realm) {
+
+        self.realm = realm
     }
-    func insert(genericDataModel : R) {
+    func insert(genericDataModel: R) {
         do {
             realm.beginWrite()
-            realm.add(genericDataModel,update:true)
+            realm.add(genericDataModel, update: true)
             try realm.commitWrite()
         } catch (let error) {
             print(error)
         }
     }
 
-    
-    func fetch(predicate:NSPredicate?)->R? {
+
+    func fetch(predicate: NSPredicate?) -> R? {
         do {
             if let predicate = predicate
             {
@@ -37,16 +37,16 @@ class GenericDao<R:Object>: GenericDataLocalSource{
             }
             else
             {
-               return realm.objects(R.self).first
+                return realm.objects(R.self).first
             }
         } catch (let error) {
             print(error)
             return nil
         }
     }
-    
-    
-    func delete(){
+
+
+    func delete() {
         do {
             realm.beginWrite()
             realm.delete(realm.objects(R.self))

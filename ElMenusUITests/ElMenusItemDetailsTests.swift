@@ -15,13 +15,13 @@ class ElMenusItemDetailsTests: XCTestCase {
         super.setUp()
         app = XCUIApplication()
     }
-    
+
     override func tearDown() {
         app = nil
         super.tearDown()
     }
-    
-    
+
+
     func testTagItemsDetailsBackButtonExists () {
         app.launch()
         let tableView = app.tables[Constants.tableViewIdentifier]
@@ -34,9 +34,9 @@ class ElMenusItemDetailsTests: XCTestCase {
         secondCell.tap()
         let backButton = self.app.buttons[Constants.backButtonIdentifier]
         XCTAssert(backButton.exists)
-        
+
     }
-    
+
     func testTagItemsDetailsScrollViewExists() {
         app.launch()
         let tableView = app.tables[Constants.tableViewIdentifier]
@@ -49,7 +49,7 @@ class ElMenusItemDetailsTests: XCTestCase {
         secondCell.tap()
         let scrollView = app.scrollViews[Constants.scrollViewItemDetailsIdentifier]
         XCTAssert(scrollView.exists)
-        
+
     }
     func testTagItemsDetailsScrollViewAnimationExists() {
         app.launch()
@@ -65,9 +65,9 @@ class ElMenusItemDetailsTests: XCTestCase {
         scrollView.swipeUp()
         scrollView.swipeUp()
 
-        
+
     }
- 
+
     func testTagItemsDetailsBackAction() {
         app.launch()
         let tableView = app.tables[Constants.tableViewIdentifier]
@@ -82,7 +82,7 @@ class ElMenusItemDetailsTests: XCTestCase {
         scrollView.swipeUp()
         let navBar = self.app.navigationBars.firstMatch
         navBar.buttons.firstMatch.tap()
-        
+
     }
-    
+
 }

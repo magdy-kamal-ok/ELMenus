@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 extension Results {
-    
+
     func itemsResltToArray() -> [Element] {
         var array = [Element]()
         for result in self {
@@ -21,7 +21,7 @@ extension Results {
 }
 
 extension List {
-    
+
     func toArray() -> [Element] {
         var array = [Element]()
         for result in self {

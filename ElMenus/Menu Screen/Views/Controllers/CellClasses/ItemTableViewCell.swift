@@ -9,11 +9,11 @@
 import UIKit
 
 class ItemTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var itemNameLbl: UILabel!
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var containerTitleView: UIView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,17 +24,17 @@ class ItemTableViewCell: UITableViewCell {
         self.selectionStyle = .none
         // Configure the view for the selected state
     }
-    
+
     func configureCell(itemModel: ItemModel)
     {
         self.itemNameLbl.text = itemModel.name
         GlobalUtilities.downloadImage(path: itemModel.photoUrl, placeholder: nil, into: self.itemImageView, indicator: nil)
-        
+
         DispatchQueue.main.async {
             self.itemImageView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
             self.containerTitleView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
         }
     }
-    
+
 
 }

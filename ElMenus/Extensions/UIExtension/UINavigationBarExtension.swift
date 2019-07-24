@@ -14,8 +14,8 @@ extension UINavigationBar
     {
         self.titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor.white,
-             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
-        
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
+
     }
-    
+
 }

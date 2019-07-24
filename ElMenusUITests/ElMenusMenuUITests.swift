@@ -15,17 +15,17 @@ class ElMenusMenuUITests: XCTestCase {
         super.setUp()
         app = XCUIApplication()
     }
-    
+
     override func tearDown() {
         app = nil
         super.tearDown()
     }
-    
+
     func testTagListLoaded() {
         app.launch()
         let tableView = app.tables[Constants.tableViewIdentifier]
         XCTAssert(tableView.exists)
-        
+
     }
     
     func testTagListCollectionViewExists()

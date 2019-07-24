@@ -11,10 +11,10 @@ import SVProgressHUD
 import TWMessageBarManager
 
 class UIHelper {
-    
+
     class func showInfoMessage(_ infoMessage: String?, title: String?) {
         if !TWMessageBarManager.sharedInstance().isMessageVisible {
-            
+
             TWMessageBarManager.sharedInstance().showMessage(withTitle: title, description: infoMessage, type: .info, statusBarStyle: UIStatusBarStyle.lightContent, callback: nil)
         }
     }
@@ -26,14 +26,14 @@ class UIHelper {
     class func showProgressBarWithDimView() {
         SVProgressHUD().defaultMaskType = .black
         SVProgressHUD().defaultAnimationType = .flat
-        SVProgressHUD.setForegroundColor(UIColor(named:"BasicColor")!)
+        SVProgressHUD.setForegroundColor(UIColor(named: "BasicColor")!)
         SVProgressHUD.show()
     }
     class func dissmissProgressBar() {
         SVProgressHUD.dismiss()
     }
 
-    
+
 }
 
 

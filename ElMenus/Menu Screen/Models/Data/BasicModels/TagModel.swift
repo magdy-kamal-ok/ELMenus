@@ -11,20 +11,20 @@ import RealmSwift
 import ObjectMapper
 import ObjectMapper_Realm
 
-class TagModel: Object,Mappable {
-    
-    @objc dynamic var tagName:String = ""
-    @objc dynamic var photoUrl:String = ""
-  
+class TagModel: Object, Mappable {
+
+    @objc dynamic var tagName: String = ""
+    @objc dynamic var photoUrl: String = ""
+
     required convenience public init?(map: Map) {
         self.init()
     }
-    
+
     func mapping(map: Map) {
-        
-        tagName             <- map["tagName"]
-        photoUrl            <- map["photoURL"]
-        
+
+        tagName <- map["tagName"]
+        photoUrl <- map["photoURL"]
+
     }
     override class func primaryKey() -> String? {
         return "tagName";

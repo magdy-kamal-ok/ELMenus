@@ -14,16 +14,16 @@ class TagItemViewController: UIViewController {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     let navBarHeight: CGFloat = 66.0
-    var itemDescription:String = ""
-    var itemName:String = "" 
-    
+    var itemDescription: String = ""
+    var itemName: String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addLeftNavbarBackButton()
         self.navigationController?.navigationBar.setAttributedTitle()
         setScrollViewDelegateAndIdentifier()
     }
-    
+
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -40,40 +40,40 @@ class TagItemViewController: UIViewController {
     }
     func addLeftNavbarBackButton()
     {
-        
+
         let backBarButton = UIBarButtonItem.init(image: UIImage.init(named: Constants.backButtonImage), style: .plain, target: self, action: #selector(backButtonClick))
         backBarButton.accessibilityIdentifier = Constants.backButtonIdentifier
         backBarButton.tintColor = .white
         navigationItem.leftBarButtonItem = backBarButton
     }
-    
+
     @objc func backButtonClick()
     {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
 }
 
-extension TagItemViewController:UIScrollViewDelegate
+extension TagItemViewController: UIScrollViewDelegate
 {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-  
-        
+
+
         if scrollView.contentOffset.y > (self.itemImageView.frame.height - (1.5 * navBarHeight)) && self.navigationController?.navigationBar.backgroundImage(for: UIBarMetrics.default) == nil
         {
-        self.navigationController?.navigationBar.setBackgroundImage(self.itemImageView.image, for: UIBarMetrics.default)
-            
+            self.navigationController?.navigationBar.setBackgroundImage(self.itemImageView.image, for: UIBarMetrics.default)
+
             self.navigationController?.navigationBar.shadowImage = nil
-            
+
         }
         else if scrollView.contentOffset.y < (self.itemImageView.frame.height - (1.5 * navBarHeight)) && self.navigationController?.navigationBar.backgroundImage(for: UIBarMetrics.default) != nil
         {
             self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
             self.navigationController?.navigationBar.shadowImage = UIImage()
-            
+
         }
 
-    
+
     }
 }
 extension TagItemViewController: ZoomTransitionAnimating {
@@ -85,11 +85,11 @@ extension TagItemViewController: ZoomTransitionAnimating {
         imageView.frame = self.itemImageView.frame
         return imageView;
     }
-    
+
     var transitionSourceBackgroundColor: UIColor? {
         return view.backgroundColor
     }
-    
+
     var transitionDestinationImageViewFrame: CGRect {
         let width = self.view.frame.width
         var frame = self.itemImageView.frame
@@ -100,11 +100,11 @@ extension TagItemViewController: ZoomTransitionAnimating {
 
 extension TagItemViewController: ZoomTransitionDelegate {
     func zoomTransitionAnimator(animator: ZoomTransitionAnimator,
-                                didCompleteTransition didComplete: Bool,
-                                animatingSourceImageView imageView: UIImageView) {
+        didCompleteTransition didComplete: Bool,
+        animatingSourceImageView imageView: UIImageView) {
         self.itemImageView.image = imageView.image
         self.itemDescriptionLbl.text = self.itemDescription
         self.title = self.itemName
-        
+
     }
 }

@@ -13,117 +13,117 @@ import RealmSwift
 import Alamofire
 
 
-class GenericBaseRepository<REMOTE:Mappable,LOCAL:Object>:
-GenericDataSourceContract {
-    
-    private let objGenericRequestClass:GenericRequestClass = GenericRequestClass<REMOTE>()
-    private var objGenericDao:GenericDao<LOCAL>!
-    
-    private var objSubjectDao = PublishSubject<LOCAL>()
-    private var objSubjectRemote = PublishSubject<REMOTE>()
+class GenericBaseRepository<REMOTE:Mappable, LOCAL:Object>:
+    GenericDataSourceContract {
 
-    private var objSubjectError = PublishSubject<ErrorModel>()
-    
-    private var bag = DisposeBag()
-    
-    public var objObservableLocal:Observable<LOCAL>{
-        return objSubjectDao.asObservable()
-    }
-    
-    public var objObservableRemoteData:Observable<REMOTE>{
-        return objSubjectRemote.asObservable()
-    }
+        private let objGenericRequestClass: GenericRequestClass = GenericRequestClass<REMOTE>()
+        private var objGenericDao: GenericDao<LOCAL>!
 
-    public var objObservableErrorModel:Observable<ErrorModel>{
-        return objSubjectError.asObservable()
-    }
-    
-    init() {
-        do {
-            let realm = try Realm()
-            self.objGenericDao = GenericDao<LOCAL>(realm: realm)
-        } catch (let error) {
-            fatalError(error.localizedDescription)
+        private var objSubjectDao = PublishSubject<LOCAL>()
+        private var objSubjectRemote = PublishSubject<REMOTE>()
+
+        private var objSubjectError = PublishSubject<ErrorModel>()
+
+        private var bag = DisposeBag()
+
+        public var objObservableLocal: Observable<LOCAL> {
+            return objSubjectDao.asObservable()
         }
-       
-    }
-    
-    func getGenericData(url:String, data:Parameters?, headers:HTTPHeaders?, bool:Bool = true)
-    {
-        if bool{
-            if let cashedData = self.fetch(predicate: self.getPredicate())
-            {
-                objSubjectDao.onNext(cashedData)
-                self.callBackEndApi(url: url, params: data, headers: headers)
-            }
-            else{
-                self.objSubjectError.onNext(ErrorModel(desc: Constants.noExisitingCashedData.localized, code: ErrorCodes.noCached.rawValue))
-                self.callBackEndApi(url: url, params: data, headers: headers)
+
+        public var objObservableRemoteData: Observable<REMOTE> {
+            return objSubjectRemote.asObservable()
+        }
+
+        public var objObservableErrorModel: Observable<ErrorModel> {
+            return objSubjectError.asObservable()
+        }
+
+        init() {
+            do {
+                let realm = try Realm()
+                self.objGenericDao = GenericDao<LOCAL>(realm: realm)
+            } catch (let error) {
+                fatalError(error.localizedDescription)
             }
 
         }
-        else
+
+        func getGenericData(url: String, data: Parameters?, headers: HTTPHeaders?, bool: Bool = true)
         {
-            self.callBackEndApi(url: url, params: data, headers: headers)
-        }
-    }
-    func callBackEndApi(url: String, params: Parameters?, headers: HTTPHeaders?)
-    {
-        self.callApi(url: url, params: params, headers: headers)?.subscribe({ (subObj) in
-            
-            switch subObj
+            if bool {
+                if let cashedData = self.fetch(predicate: self.getPredicate())
+                {
+                    objSubjectDao.onNext(cashedData)
+                    self.callBackEndApi(url: url, params: data, headers: headers)
+                }
+                else {
+                    self.objSubjectError.onNext(ErrorModel(desc: Constants.noExisitingCashedData.localized, code: ErrorCodes.noCached.rawValue))
+                    self.callBackEndApi(url: url, params: data, headers: headers)
+                }
+
+            }
+            else
             {
+                self.callBackEndApi(url: url, params: data, headers: headers)
+            }
+        }
+        func callBackEndApi(url: String, params: Parameters?, headers: HTTPHeaders?)
+        {
+            self.callApi(url: url, params: params, headers: headers)?.subscribe({ (subObj) in
+
+                switch subObj
+                {
                 case .next(let responseObj):
                     self.insert(genericDataModel: responseObj as! LOCAL)
                     self.objSubjectRemote.onNext(responseObj)
                     self.objSubjectDao.onNext(responseObj as! LOCAL)
                 case .error(let error):
                     self.objSubjectError.onNext(ErrorModel(desc: error.localizedDescription, code: ErrorCodes.remoteError.rawValue))
-                
+
                 case .completed:
                     print("Completed")
-            }
-            
-        }).disposed(by: bag)
+                }
 
-    }
-    
+            }).disposed(by: bag)
 
-    func callApi(url: String, params: Parameters?, headers: HTTPHeaders?) -> Observable<REMOTE>? {
-        if let objObserve = objGenericRequestClass.callApi(url: url,   params: params, headers: headers)
-        {
-            return objObserve
         }
-        return Observable.empty()
-    }
-    
-    func getPredicate()->NSPredicate?
-    {
-        //        preconditionFailure("You have to Override predicate To get Specified Data")
-        return nil
-    }
-    
-    func insertDataToLocal(genericDataModel : LOCAL) {
-        // override this if needed 
-        objGenericDao.insert(genericDataModel: genericDataModel)
-    }
+
+
+        func callApi(url: String, params: Parameters?, headers: HTTPHeaders?) -> Observable<REMOTE>? {
+            if let objObserve = objGenericRequestClass.callApi(url: url, params: params, headers: headers)
+            {
+                return objObserve
+            }
+            return Observable.empty()
+        }
+
+        func getPredicate() -> NSPredicate?
+        {
+            //        preconditionFailure("You have to Override predicate To get Specified Data")
+            return nil
+        }
+
+        func insertDataToLocal(genericDataModel: LOCAL) {
+            // override this if needed
+            objGenericDao.insert(genericDataModel: genericDataModel)
+        }
 }
-extension GenericBaseRepository{
-    
-    func fetch(predicate : NSPredicate?) -> LOCAL? {
+extension GenericBaseRepository {
+
+    func fetch(predicate: NSPredicate?) -> LOCAL? {
         return objGenericDao.fetch(predicate: predicate)
     }
-    
-    
-    func insert(genericDataModel : LOCAL) {
+
+
+    func insert(genericDataModel: LOCAL) {
         self.insertDataToLocal(genericDataModel: genericDataModel)
     }
 
-    
+
     func delete() {
         objGenericDao.delete()
     }
-    
-    
+
+
 }
 

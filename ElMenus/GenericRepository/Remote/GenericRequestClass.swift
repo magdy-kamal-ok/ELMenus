@@ -12,14 +12,14 @@ import ObjectMapper
 import Alamofire
 
 class GenericRequestClass<U:Mappable>: GenericDataRemoteSource {
-       
-    func callApi(url:String ,params : Parameters?, headers:HTTPHeaders?)->Observable<U>? {
-        return  Observable.create{
+
+    func callApi(url: String, params: Parameters?, headers: HTTPHeaders?) -> Observable<U>? {
+        return Observable.create {
             observer in
             Alamofire.request(url,
-                              method: .get,
-                              parameters: params, encoding: JSONEncoding.default,headers:headers
-                )
+                method: .get,
+                parameters: params, encoding: JSONEncoding.default, headers: headers
+            )
                 .responseJSON { response in
                     switch response.result {
                     case .success(let json):

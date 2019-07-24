@@ -11,24 +11,24 @@ import RealmSwift
 import ObjectMapper
 import ObjectMapper_Realm
 
-class ItemsResponseModel: Object,Mappable {
-    
-    
-    @objc dynamic var tagName:String = ""
-    var items : List<ItemModel> = List<ItemModel>()
-    
-    
+class ItemsResponseModel: Object, Mappable {
+
+
+    @objc dynamic var tagName: String = ""
+    var items: List<ItemModel> = List<ItemModel>()
+
+
     required convenience public init?(map: Map) {
         self.init()
     }
-    
+
     func mapping(map: Map) {
-        items      <- (map["items"], ListTransform<ItemModel>())
+        items <- (map["items"], ListTransform<ItemModel>())
     }
-    
+
     override class func primaryKey() -> String? {
         return "tagName";
     }
-    
-    
+
+
 }

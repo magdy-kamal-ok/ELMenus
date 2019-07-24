@@ -39,6 +39,7 @@
 		04292C5122E4EFF800EF6AD4 /* TagItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04292C4F22E4EFF800EF6AD4 /* TagItemViewController.xib */; };
 		042A878722E78A1F001A0F9B /* ElMenusGenericDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A878622E78A1F001A0F9B /* ElMenusGenericDaoTests.swift */; };
 		042A879C22E7C05C001A0F9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A8A3122E0EEFD005B4658 /* Constants.swift */; };
+		042A879F22E7C3B8001A0F9B /* ElMenusTagRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A879E22E7C3B8001A0F9B /* ElMenusTagRepositoryTests.swift */; };
 		042B758122E68DA000AB3F56 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0485A24722E57330007E740D /* Localizable.strings */; };
 		042B758722E68DBD00AB3F56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045CF9D622E0A4750093F25E /* Assets.xcassets */; };
 		0444EE4B22E240D800EA1E55 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0444EE4722E240D800EA1E55 /* MenuViewController.xib */; };
@@ -49,6 +50,9 @@
 		0444EE5C22E2478A00EA1E55 /* TagItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0444EE5722E2478A00EA1E55 /* TagItemCollectionViewCell.xib */; };
 		045CF9D722E0A4750093F25E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045CF9D622E0A4750093F25E /* Assets.xcassets */; };
 		045CF9DA22E0A4750093F25E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CF9D822E0A4750093F25E /* LaunchScreen.storyboard */; };
+		04763EDA22E7EB1E00792406 /* ElMenusItemsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04763ED922E7EB1E00792406 /* ElMenusItemsRepositoryTests.swift */; };
+		04763EDC22E7EBD300792406 /* ElMenusTagViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04763EDB22E7EBD300792406 /* ElMenusTagViewModelTests.swift */; };
+		04763EDE22E7ED1F00792406 /* ElMenusItemsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04763EDD22E7ED1F00792406 /* ElMenusItemsViewModelTests.swift */; };
 		0485A23922E5628D007E740D /* ZoomTransitionAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485A23822E5628D007E740D /* ZoomTransitionAnimating.swift */; };
 		0485A23B22E56309007E740D /* ZoomTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485A23A22E56309007E740D /* ZoomTransitionAnimator.swift */; };
 		0485A23F22E565FA007E740D /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0485A23E22E565FA007E740D /* CustomNavigationController.swift */; };
@@ -97,6 +101,7 @@
 		04292C4E22E4EFF800EF6AD4 /* TagItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItemViewController.swift; sourceTree = "<group>"; };
 		04292C4F22E4EFF800EF6AD4 /* TagItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagItemViewController.xib; sourceTree = "<group>"; };
 		042A878622E78A1F001A0F9B /* ElMenusGenericDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElMenusGenericDaoTests.swift; sourceTree = "<group>"; };
+		042A879E22E7C3B8001A0F9B /* ElMenusTagRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElMenusTagRepositoryTests.swift; sourceTree = "<group>"; };
 		042A8A2A22E0EEFD005B4658 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		042A8A2C22E0EEFD005B4658 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		042A8A2D22E0EEFD005B4658 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -128,6 +133,9 @@
 		045CF9EB22E0A4750093F25E /* ElMenusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElMenusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		045CF9EF22E0A4750093F25E /* ElMenusMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElMenusMenuUITests.swift; sourceTree = "<group>"; };
 		045CF9F122E0A4750093F25E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04763ED922E7EB1E00792406 /* ElMenusItemsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElMenusItemsRepositoryTests.swift; sourceTree = "<group>"; };
+		04763EDB22E7EBD300792406 /* ElMenusTagViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElMenusTagViewModelTests.swift; sourceTree = "<group>"; };
+		04763EDD22E7ED1F00792406 /* ElMenusItemsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElMenusItemsViewModelTests.swift; sourceTree = "<group>"; };
 		0485A23822E5628D007E740D /* ZoomTransitionAnimating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionAnimating.swift; sourceTree = "<group>"; };
 		0485A23A22E56309007E740D /* ZoomTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionAnimator.swift; sourceTree = "<group>"; };
 		0485A23E22E565FA007E740D /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -464,6 +472,10 @@
 			children = (
 				042A878622E78A1F001A0F9B /* ElMenusGenericDaoTests.swift */,
 				045CF9E422E0A4750093F25E /* ElMenusGenericRequestTests.swift */,
+				042A879E22E7C3B8001A0F9B /* ElMenusTagRepositoryTests.swift */,
+				04763ED922E7EB1E00792406 /* ElMenusItemsRepositoryTests.swift */,
+				04763EDB22E7EBD300792406 /* ElMenusTagViewModelTests.swift */,
+				04763EDD22E7ED1F00792406 /* ElMenusItemsViewModelTests.swift */,
 				045CF9E622E0A4750093F25E /* Info.plist */,
 			);
 			path = ElMenusTests;
@@ -864,6 +876,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				042A878722E78A1F001A0F9B /* ElMenusGenericDaoTests.swift in Sources */,
+				042A879F22E7C3B8001A0F9B /* ElMenusTagRepositoryTests.swift in Sources */,
+				04763EDA22E7EB1E00792406 /* ElMenusItemsRepositoryTests.swift in Sources */,
+				04763EDC22E7EBD300792406 /* ElMenusTagViewModelTests.swift in Sources */,
+				04763EDE22E7ED1F00792406 /* ElMenusItemsViewModelTests.swift in Sources */,
 				04FB90FF22E6948D008F8382 /* ElMenusGenericRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

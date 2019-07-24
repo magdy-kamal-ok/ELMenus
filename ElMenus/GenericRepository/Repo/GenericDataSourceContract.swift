@@ -20,20 +20,20 @@ typealias GenericDataSourceContract = GenericDataRemoteSource & GenericDataLocal
 
 protocol GenericDataRemoteSource {
 
-    associatedtype T:Mappable
+    associatedtype T: Mappable
 
-    func callApi(url:String ,params : Parameters?,headers:HTTPHeaders?) -> Observable<T>?
+    func callApi(url: String, params: Parameters?, headers: HTTPHeaders?) -> Observable<T>?
 
 }
 
 
 protocol GenericDataLocalSource {
 
-    associatedtype U:Object
-    
-    func fetch(predicate:NSPredicate?)->U?
-    
-    func insert(genericDataModel : U)
-    
+    associatedtype U: Object
+
+    func fetch(predicate: NSPredicate?) -> U?
+
+    func insert(genericDataModel: U)
+
     func delete()
 }
